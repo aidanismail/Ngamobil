@@ -1,0 +1,1116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+<div class="w-[1440px] h-[3469px] relative overflow-hidden bg-white">
+  <div class="w-[1440px] h-[595px]">
+    <div class="w-[1440px] h-[595px] absolute left-[-0.5px] top-[2873.5px] bg-[#081630]"></div>
+    <div class="w-[1079px] h-[45px]">
+      <p
+        class="w-[196px] h-[45px] absolute left-[168px] top-[3025px] text-[28px] text-left capitalize text-white"
+      >
+        Reservation
+      </p>
+      <p
+        class="w-[300px] h-[45px] absolute left-[518px] top-[3025px] text-[28px] text-left text-white"
+      >
+        <span class="w-[300px] h-[45px] text-[28px] text-left capitalize text-white"
+          >Customer servives</span
+        ><span class="w-[300px] h-[45px] text-[28px] font-light text-left text-white"> </span>
+      </p>
+      <p
+        class="w-[275px] h-[45px] absolute left-[972px] top-[3025px] text-[28px] text-left text-white"
+      >
+        <span class="w-[275px] h-[45px] text-[28px] text-left text-white">Company</span><br />
+      </p>
+    </div>
+    <div class="w-[1079px] h-0.5 absolute left-[167.5px] top-[3309.5px] bg-[#fff9f9]"></div>
+    <p
+      class="w-[398px] h-[41px] absolute left-[168px] top-[3345px] text-[32px] text-left text-white"
+    >
+      NGAMOBIL
+    </p>
+    <svg
+      width="50"
+      height="50"
+      viewBox="0 0 50 50"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-[50px] h-[50px] absolute left-[1007px] top-[3336px]"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM30.11 16.075C30.415 22.8083 25.3933 30.315 16.5033 30.315C13.8 30.315 11.285 29.5217 9.16667 28.1633C11.7067 28.4633 14.2417 27.7567 16.2533 26.1817C14.16 26.1433 12.3917 24.7583 11.78 22.8567C12.5317 23 13.2717 22.9583 13.9433 22.775C11.6417 22.3117 10.0517 20.2383 10.1033 18.02C10.75 18.3783 11.4867 18.5933 12.2717 18.6183C10.14 17.1933 9.53667 14.3783 10.79 12.2267C13.15 15.1233 16.6783 17.0283 20.6567 17.2283C19.9583 14.235 22.23 11.35 25.3217 11.35C26.6967 11.35 27.9417 11.9317 28.815 12.8617C29.905 12.6483 30.9317 12.2483 31.855 11.7C31.4967 12.8183 30.7383 13.755 29.75 14.3483C30.7183 14.2317 31.6417 13.975 32.4983 13.5933C31.8583 14.5567 31.0483 15.4 30.11 16.075Z"
+        fill="white"
+      ></path></svg
+    ><svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-10 h-10 absolute left-[1092px] top-[3336px]"
+      preserveAspectRatio="none"
+    >
+      <g clip-path="url(#clip0_615_62)">
+        <path
+          d="M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM25 13.3333H22.75C21.8533 13.3333 21.6667 13.7017 21.6667 14.63V16.6667H25L24.6517 20H21.6667V31.6667H16.6667V20H13.3333V16.6667H16.6667V12.82C16.6667 9.87167 18.2183 8.33333 21.715 8.33333H25V13.3333Z"
+          fill="white"
+        ></path>
+      </g>
+      <defs>
+        <clipPath id="clip0_615_62"><rect width="40" height="40" fill="white"></rect></clipPath>
+      </defs></svg
+    ><svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-10 h-10 absolute left-[1166px] top-[3336px]"
+      preserveAspectRatio="none"
+    >
+      <g clip-path="url(#clip0_615_64)">
+        <path
+          d="M24.715 10.5033C23.485 10.4467 23.115 10.4367 20 10.4367C16.885 10.4367 16.5167 10.4483 15.2867 10.5033C12.1217 10.6483 10.6483 12.1467 10.5033 15.2867C10.4483 16.5167 10.435 16.885 10.435 20C10.435 23.115 10.4483 23.4833 10.5033 24.715C10.6483 27.8467 12.115 29.3533 15.2867 29.4983C16.515 29.5533 16.885 29.5667 20 29.5667C23.1167 29.5667 23.485 29.555 24.715 29.4983C27.88 29.355 29.3517 27.8517 29.4983 24.715C29.5533 23.485 29.565 23.115 29.565 20C29.565 16.885 29.5533 16.5167 29.4983 15.2867C29.3517 12.1483 27.8767 10.6483 24.715 10.5033ZM20 25.9917C16.6917 25.9917 14.0083 23.31 14.0083 20C14.0083 16.6917 16.6917 14.01 20 14.01C23.3083 14.01 25.9917 16.6917 25.9917 20C25.9917 23.3083 23.3083 25.9917 20 25.9917ZM26.2283 15.1733C25.455 15.1733 24.8283 14.5467 24.8283 13.7733C24.8283 13 25.455 12.3733 26.2283 12.3733C27.0017 12.3733 27.6283 13 27.6283 13.7733C27.6283 14.545 27.0017 15.1733 26.2283 15.1733ZM23.8883 20C23.8883 22.1483 22.1467 23.8883 20 23.8883C17.8533 23.8883 16.1117 22.1483 16.1117 20C16.1117 17.8517 17.8533 16.1117 20 16.1117C22.1467 16.1117 23.8883 17.8517 23.8883 20ZM20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM31.5967 24.81C31.405 29.0517 29.0433 31.4017 24.8117 31.5967C23.5667 31.6533 23.1683 31.6667 20 31.6667C16.8317 31.6667 16.435 31.6533 15.19 31.5967C10.95 31.4017 8.59833 29.0483 8.40333 24.81C8.34667 23.5667 8.33333 23.1683 8.33333 20C8.33333 16.8317 8.34667 16.435 8.40333 15.19C8.59833 10.95 10.9517 8.59833 15.19 8.405C16.435 8.34667 16.8317 8.33333 20 8.33333C23.1683 8.33333 23.5667 8.34667 24.8117 8.405C29.0533 8.6 31.4067 10.9583 31.5967 15.19C31.6533 16.435 31.6667 16.8317 31.6667 20C31.6667 23.1683 31.6533 23.5667 31.5967 24.81Z"
+          fill="white"
+        ></path>
+      </g>
+      <defs>
+        <clipPath id="clip0_615_64"><rect width="40" height="40" fill="white"></rect></clipPath>
+      </defs>
+    </svg>
+    <p
+      class="w-[217px] h-[204px] absolute left-[168px] top-[3091px] text-[25px] text-left capitalize text-white"
+    >
+      <span class="w-[217px] h-[204px] text-[25px] text-left capitalize text-white">car hire</span
+      ><br /><span class="w-[217px] h-[204px] text-[25px] text-left capitalize text-white"
+        >modify or cancel</span
+      ><br /><span class="w-[217px] h-[204px] text-[25px] text-left capitalize text-white"
+        >Get a receipt</span
+      >
+    </p>
+    <p
+      class="w-[217px] h-[204px] absolute left-[518px] top-[3091px] text-[25px] text-left capitalize text-white"
+    >
+      <span class="w-[217px] h-[204px] text-[25px] text-left capitalize text-white"
+        >Help / fAQS</span
+      ><br /><span class="w-[217px] h-[204px] text-[25px] text-left capitalize text-white"
+        >press</span
+      ><br /><span class="w-[217px] h-[204px] text-[25px] text-left capitalize text-white"
+        >blog</span
+      ><br /><span class="w-[217px] h-[204px] text-[25px] text-left capitalize text-white"
+        >contact Us</span
+      >
+    </p>
+    <p
+      class="w-[254px] h-[204px] absolute left-[976px] top-[3091px] text-[25px] text-left capitalize text-white"
+    >
+      <span class="w-[254px] h-[204px] text-[25px] text-left capitalize text-white">About us</span
+      ><br /><span class="w-[254px] h-[204px] text-[25px] text-left capitalize text-white"
+        >carrer</span
+      ><br /><span class="w-[254px] h-[204px] text-[25px] text-left capitalize text-white"
+        >report &#x26; gorvenance</span
+      >
+    </p>
+  </div>
+  <div class="w-[1304px] h-[699px]">
+    <p
+      class="w-[740px] h-[50px] absolute left-[363px] top-[180px] text-[45px] text-left capitalize text-black"
+    >
+      Pilih teman anda untuk hari ini
+    </p>
+    <div class="w-[371px] h-[482px] absolute left-[1000px] top-[397px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[355.56px] h-[565px]">
+          <p
+            class="w-[171px] h-[31px] absolute left-[86.56px] top-[487px] text-[25px] text-left capitalize text-[#21408e]"
+          >
+            Rp 1.500.000
+          </p>
+          <p
+            class="w-[234px] h-[39px] absolute left-[42.56px] top-0 text-[34px] text-left capitalize text-[#21408e]"
+          >
+            Toyota GT-86
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            2016
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[85px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Pertamax
+          </p>
+          <p
+            class="w-16 h-[26px] absolute left-[127.56px] top-[539px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+      </div>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77913L22.8399 5.76726L17.4609 1.34982L15.9281 2.60855L18.9791 5.11414C17.6199 5.54164 16.6511 6.61037 16.6511 7.88098C16.6511 9.51971 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6003V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4434 15.9281 11.4434H14.4822V3.13104C14.4822 1.82481 13.1808 0.756073 11.5902 0.756073H2.9144C1.32384 0.756073 0.0224609 1.82481 0.0224609 3.13104V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88098C23.881 7.06162 23.4761 6.3135 22.8254 5.77913ZM20.2661 9.06847C19.4708 9.06847 18.8201 8.5341 18.8201 7.88098C18.8201 7.22786 19.4708 6.6935 20.2661 6.6935C21.0613 6.6935 21.712 7.22786 21.712 7.88098C21.712 8.5341 21.0613 9.06847 20.2661 9.06847ZM5.80635 18.5683V13.2247H2.9144L8.69829 4.31853V10.2559H11.5902L5.80635 18.5683Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_400)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_400">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img
+        src="image-5.png"
+        class="w-[404px] h-[242px] absolute left-[388px] top-[232px] object-cover"
+      />
+    </div>
+    <div class="w-[371px] h-[482px] absolute left-[537px] top-[397px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[330.56px] h-[565px]">
+          <div class="w-[140px] h-[31px] absolute left-[92.56px] top-[486px]">
+            <p
+              class="w-[140px] h-[31px] absolute left-0 top-0 text-[25px] text-left capitalize text-[#21408e]"
+            >
+              Rp 500.000
+            </p>
+          </div>
+          <p
+            class="w-[252px] h-[39px] absolute left-[36.56px] top-0 text-[34px] text-left capitalize text-[#21408e]"
+          >
+            Toyota Avanza
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            2016
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[60px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Pertalite
+          </p>
+          <p
+            class="w-[66px] h-[26px] absolute left-[125.56px] top-[539px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+      </div>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77913L22.8399 5.76726L17.4609 1.34982L15.9281 2.60855L18.9791 5.11414C17.6199 5.54164 16.6511 6.61037 16.6511 7.88098C16.6511 9.51971 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6003V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4434 15.9281 11.4434H14.4822V3.13104C14.4822 1.82481 13.1808 0.756073 11.5902 0.756073H2.9144C1.32384 0.756073 0.0224609 1.82481 0.0224609 3.13104V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88098C23.881 7.06162 23.4761 6.3135 22.8254 5.77913ZM20.2661 9.06847C19.4708 9.06847 18.8201 8.5341 18.8201 7.88098C18.8201 7.22786 19.4708 6.6935 20.2661 6.6935C21.0613 6.6935 21.712 7.22786 21.712 7.88098C21.712 8.5341 21.0613 9.06847 20.2661 9.06847ZM5.80635 18.5683V13.2247H2.9144L8.69829 4.31853V10.2559H11.5902L5.80635 18.5683Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_306)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_306">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img
+        src="png-transparent-toyota-avanza-car-minivan-toyota-fortuner-toyota-compact-car-car-mode-of-transport-removebg-preview-removebg-preview-1.png"
+        class="w-[415px] h-[297px] absolute left-[-23px] top-[172px] object-cover"
+      />
+    </div>
+    <div class="w-[371px] h-[482px] absolute left-[67px] top-[397px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[330.56px] h-[564px]">
+          <p
+            class="w-[140px] h-[31px] absolute left-[92.56px] top-[486px] text-[25px] text-left capitalize text-[#21408e]"
+          >
+            Rp 300.000
+          </p>
+          <p
+            class="w-[216px] h-[39px] absolute left-[54.56px] top-0 text-[34px] text-left capitalize text-[#21408e]"
+          >
+            Toyota Agya
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            2023
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[60px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Pertalite
+          </p>
+          <p
+            class="w-[74px] h-[26px] absolute left-[125.56px] top-[538px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+      </div>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77913L22.8399 5.76726L17.4609 1.34982L15.9281 2.60855L18.9791 5.11414C17.6199 5.54164 16.6511 6.61037 16.6511 7.88098C16.6511 9.51971 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6003V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4434 15.9281 11.4434H14.4822V3.13104C14.4822 1.82481 13.1808 0.756073 11.5902 0.756073H2.9144C1.32384 0.756073 0.0224609 1.82481 0.0224609 3.13104V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88098C23.881 7.06162 23.4761 6.3135 22.8254 5.77913ZM20.2661 9.06847C19.4708 9.06847 18.8201 8.5341 18.8201 7.88098C18.8201 7.22786 19.4708 6.6935 20.2661 6.6935C21.0613 6.6935 21.712 7.22786 21.712 7.88098C21.712 8.5341 21.0613 9.06847 20.2661 9.06847ZM5.80635 18.5683V13.2247H2.9144L8.69829 4.31853V10.2559H11.5902L5.80635 18.5683Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_422)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_422">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img
+        src="image-1.png"
+        class="w-[507px] h-[351px] absolute left-[-62px] top-[156px] object-cover"
+      />
+    </div>
+    <div class="w-[181px] h-[55px]">
+      <div
+        class="w-[181px] h-[55px] absolute left-[638.5px] top-[311.5px] rounded-[13px] bg-[#c4c4c4]"
+      ></div>
+      <svg
+        width="55"
+        height="50"
+        viewBox="0 0 55 50"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        class="absolute left-[643.5px] top-[313.5px]"
+        preserveAspectRatio="none"
+      >
+        <g style="mix-blend-mode:multiply">
+          <path d="M0 0H55V50H0V0Z" fill="url(#pattern0_619_110)"></path>
+        </g>
+        <defs>
+          <pattern
+            id="pattern0_619_110"
+            patternContentUnits="objectBoundingBox"
+            width="1"
+            height="1"
+          >
+            <use
+              xlink:href="#image0_619_110"
+              transform="matrix(0.00439174 0 0 0.00483092 -0.0357927 0)"
+            ></use>
+          </pattern>
+          <image
+            id="image0_619_110"
+            width="244"
+            height="207"
+            xlink:href="data:image/png;base64,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"
+          ></image>
+        </defs>
+      </svg>
+      <p class="absolute left-[722px] top-[326px] text-[22px] text-left capitalize text-black">
+        Toyota
+      </p>
+    </div>
+  </div>
+  <div class="w-[1304px] h-[572px]">
+    <div class="w-[371px] h-[482px] absolute left-[995px] top-[1218px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[330.56px] h-[565px]">
+          <p
+            class="w-[161px] h-[31px] absolute left-[84.56px] top-[486px] text-[25px] text-left capitalize text-[#21408e]"
+          >
+            Rp 1.000.000
+          </p>
+          <p
+            class="w-[209px] h-[39px] absolute left-[60.56px] top-0 text-[34px] text-left capitalize text-[#21408e]"
+          >
+            Honda Beat
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            <span class="w-[53.68px] h-[24.58px] text-xl text-left capitalize text-black">2004</span
+            ><br />
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[60px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Pertalite
+          </p>
+          <p
+            class="w-16 h-[26px] absolute left-[127.56px] top-[539px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+      </div>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77916L22.8399 5.76729L17.4609 1.34985L15.9281 2.60858L18.9791 5.11417C17.6199 5.54167 16.6511 6.6104 16.6511 7.88101C16.6511 9.51974 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6004V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4435 15.9281 11.4435H14.4822V3.13107C14.4822 1.82484 13.1808 0.756104 11.5902 0.756104H2.9144C1.32384 0.756104 0.0224609 1.82484 0.0224609 3.13107V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88101C23.881 7.06165 23.4761 6.31353 22.8254 5.77916ZM20.2661 9.0685C19.4708 9.0685 18.8201 8.53413 18.8201 7.88101C18.8201 7.22789 19.4708 6.69353 20.2661 6.69353C21.0613 6.69353 21.712 7.22789 21.712 7.88101C21.712 8.53413 21.0613 9.0685 20.2661 9.0685ZM5.80635 18.5684V13.2247H2.9144L8.69829 4.31856V10.256H11.5902L5.80635 18.5684Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_454)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_454">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img
+        src="image-5-2.png"
+        class="w-[385px] h-[268px] absolute left-[-8px] top-[201px] object-cover"
+      />
+    </div>
+    <div class="w-[371px] h-[482px] absolute left-[532px] top-[1218px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[354.56px] h-[565px]">
+          <p
+            class="w-[140px] h-[31px] absolute left-[95.56px] top-[486px] text-[25px] text-left capitalize text-[#21408e]"
+          >
+            Rp 700.000
+          </p>
+          <p
+            class="w-56 h-[39px] absolute left-[50.56px] top-0 text-[34px] text-left capitalize text-[#21408e]"
+          >
+            Honda HR-V
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            2023
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[84px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Pertamax
+          </p>
+          <p
+            class="w-[66px] h-[26px] absolute left-[125.56px] top-[539px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+      </div>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77916L22.8399 5.76729L17.4609 1.34985L15.9281 2.60858L18.9791 5.11417C17.6199 5.54167 16.6511 6.6104 16.6511 7.88101C16.6511 9.51974 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6004V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4435 15.9281 11.4435H14.4822V3.13107C14.4822 1.82484 13.1808 0.756104 11.5902 0.756104H2.9144C1.32384 0.756104 0.0224609 1.82484 0.0224609 3.13107V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88101C23.881 7.06165 23.4761 6.31353 22.8254 5.77916ZM20.2661 9.0685C19.4708 9.0685 18.8201 8.53413 18.8201 7.88101C18.8201 7.22789 19.4708 6.69353 20.2661 6.69353C21.0613 6.69353 21.712 7.22789 21.712 7.88101C21.712 8.53413 21.0613 9.0685 20.2661 9.0685ZM5.80635 18.5684V13.2247H2.9144L8.69829 4.31856V10.256H11.5902L5.80635 18.5684Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_476)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_476">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img
+        src="png-transparent-toyota-avanza-car-minivan-toyota-fortuner-toyota-compact-car-car-mode-of-transport-removebg-preview-removebg-preview-1-2.png"
+        class="w-[381px] h-[216px] absolute left-[380px] top-[234px] object-cover"
+      />
+    </div>
+    <div class="w-[371px] h-[482px] absolute left-[62px] top-[1218px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[330.56px] h-[564px]">
+          <p
+            class="w-[140px] h-[31px] absolute left-[92.56px] top-[486px] text-[25px] text-left capitalize text-[#21408e]"
+          >
+            Rp 300.000
+          </p>
+          <p
+            class="w-[202px] h-[39px] absolute left-[61.56px] top-0 text-[34px] text-left capitalize text-[#21408e]"
+          >
+            Honda Brio
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            2016
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[60px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Pertalite
+          </p>
+          <p
+            class="w-[74px] h-[26px] absolute left-[125.56px] top-[538px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+      </div>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77916L22.8399 5.76729L17.4609 1.34985L15.9281 2.60858L18.9791 5.11417C17.6199 5.54167 16.6511 6.6104 16.6511 7.88101C16.6511 9.51974 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6004V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4435 15.9281 11.4435H14.4822V3.13107C14.4822 1.82484 13.1808 0.756104 11.5902 0.756104H2.9144C1.32384 0.756104 0.0224609 1.82484 0.0224609 3.13107V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88101C23.881 7.06165 23.4761 6.31353 22.8254 5.77916ZM20.2661 9.0685C19.4708 9.0685 18.8201 8.53413 18.8201 7.88101C18.8201 7.22789 19.4708 6.69353 20.2661 6.69353C21.0613 6.69353 21.712 7.22789 21.712 7.88101C21.712 8.53413 21.0613 9.0685 20.2661 9.0685ZM5.80635 18.5684V13.2247H2.9144L8.69829 4.31856V10.256H11.5902L5.80635 18.5684Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_498)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_498">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img
+        src="image-1-2.png"
+        class="w-[337px] h-[257px] absolute left-[13px] top-[193px] object-none"
+      />
+    </div>
+    <div class="w-[181px] h-[55px]">
+      <div
+        class="w-[181px] h-[55px] absolute left-[632.5px] top-[1127.5px] rounded-[13px] bg-[#c4c4c4]"
+      ></div>
+      <p class="absolute left-[715px] top-[1143px] text-[22px] text-left capitalize text-black">
+        honda
+      </p>
+      <img
+        src="image-3.png"
+        class="w-[67px] h-[41px] absolute left-[641.5px] top-[1134.5px] object-cover mix-blend-multiply"
+      />
+    </div>
+  </div>
+  <div class="w-[1304px] h-[573px]">
+    <div class="w-[181px] h-[55px]">
+      <div
+        class="w-[181px] h-[55px] absolute left-[623.5px] top-[1969.5px] rounded-[13px] bg-[#c4c4c4]"
+      ></div>
+      <p class="absolute left-[696px] top-[1984px] text-[22px] text-left capitalize text-black">
+        Nissan
+      </p>
+      <img
+        src="image-4.png"
+        class="w-[49px] h-[43px] absolute left-[634.5px] top-[1975.5px] object-cover mix-blend-multiply"
+      />
+    </div>
+    <div class="w-[371px] h-[482px] absolute left-[995px] top-[2061px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[330.56px] h-[565px]">
+          <p
+            class="w-[157px] h-[31px] absolute left-[86.56px] top-[486px] text-[25px] text-left capitalize text-[#21408e]"
+          >
+            Rp 1.000.000
+          </p>
+          <p
+            class="w-[209px] h-[39px] absolute left-[60.56px] top-0 text-[34px] text-left capitalize text-[#21408e]"
+          >
+            Nissan terra
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            2020
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[60px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Solar
+          </p>
+          <p
+            class="w-16 h-[26px] absolute left-[127.56px] top-[539px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+      </div>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77916L22.8399 5.76729L17.4609 1.34985L15.9281 2.60858L18.9791 5.11417C17.6199 5.54167 16.6511 6.6104 16.6511 7.88101C16.6511 9.51974 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6004V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4435 15.9281 11.4435H14.4822V3.13107C14.4822 1.82484 13.1808 0.756104 11.5902 0.756104H2.9144C1.32384 0.756104 0.0224609 1.82484 0.0224609 3.13107V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88101C23.881 7.06165 23.4761 6.31353 22.8254 5.77916ZM20.2661 9.0685C19.4708 9.0685 18.8201 8.53413 18.8201 7.88101C18.8201 7.22789 19.4708 6.69353 20.2661 6.69353C21.0613 6.69353 21.712 7.22789 21.712 7.88101C21.712 8.53413 21.0613 9.0685 20.2661 9.0685ZM5.80635 18.5684V13.2247H2.9144L8.69829 4.31856V10.256H11.5902L5.80635 18.5684Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_611)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_611">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img
+        src="image-5-3.png"
+        class="w-[476px] h-[264px] absolute left-[-53px] top-[186px] object-none"
+      />
+    </div>
+    <div class="w-[371px] h-[482px] absolute left-[532px] top-[2061px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[330.56px] h-[159.58px]">
+          <p
+            class="w-[140px] h-[31px] absolute left-[92.56px] top-[486px] text-[25px] text-left capitalize text-[#21408e]"
+          >
+            Rp 300.000
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            2016
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[60px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Pertalite
+          </p>
+          <p
+            class="w-[66px] h-[26px] absolute left-[125.56px] top-[539px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+        <img
+          src="png-transparent-toyota-avanza-car-minivan-toyota-fortuner-toyota-compact-car-car-mode-of-transport-removebg-preview-removebg-preview-1-3.png"
+          class="w-[388px] h-[265px] absolute left-[-36.44px] top-[139px] object-cover"
+        />
+      </div>
+      <p
+        class="w-[345px] h-[39px] absolute left-[17px] top-[52px] text-[34px] text-left capitalize text-[#21408e]"
+      >
+        Nissan Grand Livina
+      </p>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77916L22.8399 5.76729L17.4609 1.34985L15.9281 2.60858L18.9791 5.11417C17.6199 5.54167 16.6511 6.6104 16.6511 7.88101C16.6511 9.51974 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6004V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4435 15.9281 11.4435H14.4822V3.13107C14.4822 1.82484 13.1808 0.756104 11.5902 0.756104H2.9144C1.32384 0.756104 0.0224609 1.82484 0.0224609 3.13107V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88101C23.881 7.06165 23.4761 6.31353 22.8254 5.77916ZM20.2661 9.0685C19.4708 9.0685 18.8201 8.53413 18.8201 7.88101C18.8201 7.22789 19.4708 6.69353 20.2661 6.69353C21.0613 6.69353 21.712 7.22789 21.712 7.88101C21.712 8.53413 21.0613 9.0685 20.2661 9.0685ZM5.80635 18.5684V13.2247H2.9144L8.69829 4.31856V10.256H11.5902L5.80635 18.5684Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_633)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_633">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div class="w-[371px] h-[482px] absolute left-[62px] top-[2061px]">
+      <div class="w-[371px] h-[625.21px]">
+        <div
+          class="w-[368.61px] h-[603.84px] absolute left-[1.89px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#cbc9c2]"
+          style="box-shadow: 5px 8px 19px -2px rgba(0,0,0,0.44);"
+        ></div>
+        <div
+          class="w-[371px] h-[152.83px] absolute left-[-0.5px] top-[450.51px] rounded-tl-[21px] rounded-tr-[21px] bg-white"
+        ></div>
+        <div
+          class="w-[195.64px] h-[42.75px] absolute left-[88.97px] top-[581.96px] rounded-xl bg-[#21408e]"
+        ></div>
+        <div
+          class="w-[366.23px] h-[142.14px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-[21px] rounded-tr-[21px] bg-[#faf5f8]"
+        ></div>
+      </div>
+      <div class="w-[330.56px] h-[565px] absolute left-[27.44px] top-[52px]">
+        <div class="w-[330.56px] h-[558px]">
+          <p
+            class="w-[140px] h-[31px] absolute left-[92.56px] top-[486px] text-[25px] text-left capitalize text-[#21408e]"
+          >
+            Rp 500.000
+          </p>
+          <p
+            class="w-[268px] h-[39px] absolute left-[26.56px] top-1.5 text-[34px] text-left capitalize text-[#21408e]"
+          >
+            Nissan Magnite
+          </p>
+          <p
+            class="w-[53.68px] h-[24.58px] absolute left-0 top-[405.42px] text-xl text-left capitalize text-black"
+          >
+            2020
+          </p>
+          <p
+            class="w-[29.82px] h-[19.24px] absolute left-[32.21px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            15k
+          </p>
+          <p
+            class="w-[38.17px] h-[19.24px] absolute left-[153.89px] top-[446.03px] text-[15px] text-left capitalize text-black"
+          >
+            auto
+          </p>
+          <p
+            class="w-[60px] h-[19px] absolute left-[270.56px] top-[446px] text-[15px] text-left capitalize text-black"
+          >
+            Pertalite
+          </p>
+          <p
+            class="w-[74px] h-[26px] absolute left-[125.56px] top-[538px] text-[22px] text-left capitalize text-white"
+          >
+            Rental
+          </p>
+        </div>
+      </div>
+      <div class="w-[257.88px] h-[25.24px]">
+        <svg
+          width="24"
+          height="23"
+          viewBox="0 0 24 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-[265.52px] top-[493.26px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22.8254 5.77916L22.8399 5.76729L17.4609 1.34985L15.9281 2.60858L18.9791 5.11417C17.6199 5.54167 16.6511 6.6104 16.6511 7.88101C16.6511 9.51974 18.2706 10.8497 20.2661 10.8497C20.7866 10.8497 21.2638 10.7547 21.712 10.6004V19.1621C21.712 19.8152 21.0613 20.3496 20.2661 20.3496C19.4708 20.3496 18.8201 19.8152 18.8201 19.1621V13.8184C18.8201 12.5122 17.5187 11.4435 15.9281 11.4435H14.4822V3.13107C14.4822 1.82484 13.1808 0.756104 11.5902 0.756104H2.9144C1.32384 0.756104 0.0224609 1.82484 0.0224609 3.13107V22.1308H14.4822V13.2247H16.6511V19.1621C16.6511 20.8008 18.2706 22.1308 20.2661 22.1308C22.2615 22.1308 23.881 20.8008 23.881 19.1621V7.88101C23.881 7.06165 23.4761 6.31353 22.8254 5.77916ZM20.2661 9.0685C19.4708 9.0685 18.8201 8.53413 18.8201 7.88101C18.8201 7.22789 19.4708 6.69353 20.2661 6.69353C21.0613 6.69353 21.712 7.22789 21.712 7.88101C21.712 8.53413 21.0613 9.0685 20.2661 9.0685ZM5.80635 18.5684V13.2247H2.9144L8.69829 4.31856V10.256H11.5902L5.80635 18.5684Z"
+            fill="#F1BC00"
+          ></path></svg
+        ><img
+          src="speedometer-icon_318-1920-1.png"
+          class="w-[22px] h-[22px] absolute left-[31.5px] top-[496.5px] object-cover"
+        /><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 absolute left-[150px] top-[495px]"
+          preserveAspectRatio="none"
+        >
+          <g clip-path="url(#clip0_615_655)">
+            <path
+              d="M9 16H11V8H9V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM13 16H15V8H13V16Z"
+              fill="#F1BC00"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_615_655">
+              <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img
+        src="image-1-3.png"
+        class="w-[358px] h-[284px] absolute left-2.5 top-[190px] object-cover"
+      />
+    </div>
+  </div>
+  <div class="w-[1416.28px] h-[69.28px] absolute left-6 top-2.5">
+    <div class="w-[542.28px] h-[63.28px]">
+      <div class="w-[542.28px] h-[63.28px] absolute left-[874px] top-1.5">
+        <p
+          class="w-[94.55px] h-[22.3px] absolute left-0 top-[-0.49px] text-2xl text-left text-black"
+        >
+          Home
+        </p>
+        <p
+          class="w-[121.71px] h-[63.28px] absolute left-[121.71px] top-0 text-2xl text-left text-black"
+        >
+          Services
+        </p>
+        <p
+          class="w-[94.55px] h-[63.28px] absolute left-[270.6px] top-0 text-2xl text-left text-black"
+        >
+          Blog
+        </p>
+        <p
+          class="w-[149.97px] h-[63.28px] absolute left-[392.31px] top-0 text-2xl text-left text-black"
+        >
+          Contact Us
+        </p>
+      </div>
+    </div>
+    <p class="w-[158.66px] h-[43.58px] absolute left-0 top-0 text-2xl text-left text-black">
+      Ngamobil
+    </p>
+  </div>
+</div>
