@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./index.js"></script>
+  <title>Ngamobil</title>
+</head>
+<body class="bg-gray-100">
+  <!-- Header / Nav -->
+  <header class="flex items-center justify-between p-1 bg-white shadow-md">
+    <div class="flex items-center space-x-1">
+      <img src="./src/logo-ngamobil.jpg" alt="logo-website" class="h-16 w-20">
+      <p class="text-xl font-bold">Ngamobil.</p>
+    </div>
+    <nav>
+      <div class="hidden md:flex space-x-4">
+        <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
+        <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <!--/Header / nav-->
+  <!--hamburger menu-->
+  <div id="mobile-menu" class=" menu-closed md:hidden  transition-height">
+    <a href="#" class="block px-4 py-2 text-gray-700">Home</a>
+    <a href="#" class="block px-4 py-2 text-gray-700 ">Contact</a>
+  </div>
+  <!--/hamburger menu-->
+
+  <!--detail pemesanan-->
+  <h1 class="text-center text-blue-700 my-7">KONTOL</h1>
+  <!--/detail pemesanan-->
+
+  <!--script-->
+  <script src="./index.js"></script>
+  <!--/script-->
+</body>
+</html>
