@@ -1,15 +1,11 @@
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .menu-open {
-    display: block;
-  }
+  display: block;
+}
 .menu-closed {
-    display: none;
-  }
-
-.transition-height {
-  transition: height 0.3s ease-in-out;
+  display: none;
 }

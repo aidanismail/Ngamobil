@@ -17,7 +17,7 @@
       <p class="text-xl font-bold">Ngamobil.</p>
     </div>
     <nav>
-      <div class="hidden md:flex space-x-4">
+      <div class="hidden md:flex space-x-4 pr-8">
         <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
         <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Contact</a>
       </div>
@@ -32,15 +32,37 @@
   </header>
   <!--/Header / nav-->
   <!--hamburger menu-->
-  <div id="mobile-menu" class=" menu-closed md:hidden  transition-height">
+  <div id="mobile-menu" class=" menu-closed md:hidden ">
     <a href="#" class="block px-4 py-2 text-gray-700">Home</a>
     <a href="#" class="block px-4 py-2 text-gray-700 ">Contact</a>
   </div>
   <!--/hamburger menu-->
 
   <!--detail pemesanan-->
-  <h1 class="text-center text-blue-700 my-7">KONTOL</h1>
+ <div id="detail-pemesanan" class="m-8 bg-gray-300 p-4">
+  <h1>DETAIL PEMESANAN</h1>
+  <div class="m-2 bg-white p-3">
+    <div class="flex flex-column">
+      <div class="flex flex-row">
+        <img src="./src/contoh-mobil.png" alt="contoh-mobil" class="h-auto w-96">
+        <div class="flex flex-col justify-center">
+          <h2>Mobil Nefritos</h2>
+          <ul>
+            <li>Warna: </li>
+            <li>Jenis BBM: </li>
+            <li>Transmisi: </li>
+            <li>Jumlah Kursi: </li>
+            <li>Tahun Produksi: </li>
+          </ul>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+ </div>
   <!--/detail pemesanan-->
+
+  
 
   <!--script-->
   <script src="./index.js"></script>
