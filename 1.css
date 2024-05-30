@@ -1,0 +1,12 @@
+•⁠  ⁠{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-open {
+    display: block;
+  }
+  
+  .menu-closed {
+    display: none;
+  }
