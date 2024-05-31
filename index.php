@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tailwind CSS -->
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./index.js"></script>
   <title>Ngamobil</title>
 </head>
 <body class="bg-gray-100">
-  <!-- Header / Nav -->
+  <?php include 'database.php'; ?>
+
   <header class="flex items-center justify-between p-1 bg-white shadow-md">
     <div class="flex items-center space-x-1">
       <img src="./src/logo-ngamobil.jpg" alt="logo-website" class="h-16 w-20">
@@ -30,34 +30,47 @@
       </div>
     </nav>
   </header>
-  <!--/Header / nav-->
-  <!--hamburger menu-->
   <div id="mobile-menu" class="menu-closed md:hidden">
     <a href="#" class="block px-4 py-2 text-gray-700">Home</a>
     <a href="#" class="block px-4 py-2 text-gray-700">Contact</a>
   </div>
-  <!--/hamburger menu-->
 
-  <!--detail pemesanan-->
   <div id="detail-pemesanan" class="m-16 bg-gray-300 p-4">
     <h1 class="text-xl font-bold mb-4">DETAIL PEMESANAN</h1>
     <div class="m-4 bg-white p-6">
       <div class="flex flex-col space-y-4">
-        <div class="flex flex-row justify-center mx-8 gap-72">
-          <img src="./src/contoh-mobil.png" alt="contoh-mobil" class="h-auto w-96">
-          <div class="flex flex-col justify-center ">
-            <h2 class="text-xl font-bold mb-2">Toyota Agya</h2>
-            <ul class="list-disc">
-              <li class="py-2">Warna: Putih</li>
-              <li class="py-2">Jenis BBM: Bensin</li>
-              <li class="py-2">Transmisi: Manual</li>
-              <li class="py-2">Jumlah Kursi: 5</li>
-              <li class="py-2">Tahun Produksi: 2020</li>
+        <div class="flex flex-col md:flex-row justify-center mx-8 gap-8 md:gap-72">
+          <?php
+          $sql = "SELECT * FROM kendaraan WHERE id_kendaraan = 1";
+          $result = $conn->query($sql);
+
+          if ($result && $result->num_rows > 0) {
+              $car = $result->fetch_assoc();
+          } else {
+              $car = [
+                  'jenis_mobil' => 'Unknown',
+                  'warna' => 'Unknown',
+                  'jenis_bbm' => 'Unknown',
+                  'transmisi' => 'Unknown',
+                  'jumlah_kursi' => 'Unknown',
+                  'tahun' => 'Unknown',
+              ];
+          }
+          ?>
+          <img src="./src/contoh-mobil.png" alt="contoh-mobil" class="w-full md:w-96 h-auto">
+          <div class="flex flex-col justify-center text-center md:text-left">
+            <h2 class="text-xl font-bold mb-2"><?php echo htmlspecialchars($car['jenis_mobil']); ?></h2>
+            <ul class="list-disc list-inside">
+              <li class="py-2">Warna: <?php echo htmlspecialchars($car['warna']); ?></li>
+              <li class="py-2">Jenis BBM: <?php echo htmlspecialchars($car['jenis_bbm']); ?></li>
+              <li class="py-2">Transmisi: <?php echo htmlspecialchars($car['transmisi']); ?></li>
+              <li class="py-2">Jumlah Kursi: <?php echo htmlspecialchars($car['jumlah_kursi']); ?></li>
+              <li class="py-2">Tahun Produksi: <?php echo htmlspecialchars($car['tahun']); ?></li>
             </ul>
           </div>
         </div>
         <div class="py-8">
-          <ul>
+          <ul class="list-disc list-inside">
             <li class="py-2">ID_Pemesanan: 123456</li>
             <li class="py-2">Waktu Rental: 3 Hari</li>
             <li class="py-2">Harga: Rp 450,000/hari</li>
@@ -67,37 +80,33 @@
       </div>
     </div>
   </div>
-  <!--/detail pemesanan-->
 
-  <!--metode pembayaran-->
   <div id="metode-pembayaran" class="m-16 bg-gray-300 p-4">
     <h1 class="text-xl font-bold mb-4">METODE PEMBAYARAN</h1>
     <div class="m-4 bg-white p-6">
-      <form class="flex flex-col space-y-4">
-        <!-- Bayar di Tempat -->
+      <form class="flex flex-col space-y-4" action="process_form.php" method="POST">
         <label class="flex items-center justify-between cursor-pointer">
           <span class="text-lg font-semibold">Bayar di Tempat</span>
-          <input type="radio" name="payment-method" value="bayar-di-tempat">
+          <input type="radio" name="payment_method" value="bayar-di-tempat" required>
           <img src="./src/checkmark.png" alt="checkmark" class="h-6 w-6 hidden">
         </label>
-        <!-- Transfer Bank -->
         <label class="flex items-center justify-between cursor-pointer">
           <span class="text-lg font-semibold">Transfer Bank</span>
-          <input type="radio" name="payment-method" value="transfer-bank">
+          <input type="radio" name="payment_method" value="transfer-bank" required>
           <img src="./src/checkmark.png" alt="checkmark" class="h-6 w-6 hidden">
         </label>
-        <!-- Virtual Account -->
         <label class="flex items-center justify-between cursor-pointer">
           <span class="text-lg font-semibold">Virtual Account</span>
-          <input type="radio" name="payment-method" value="virtual-account">
+          <input type="radio" name="payment_method" value="virtual-account" required>
           <img src="./src/checkmark.png" alt="checkmark" class="h-6 w-6 hidden">
         </label>
+        <input type="hidden" name="car_id" value="<?php echo htmlspecialchars($car['id_kendaraan']); ?>">
+        <input type="hidden" name="total_harga" value="1350000"> <!-- Example total price -->
+        <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded">BAYAR</button>
       </form>
     </div>
   </div>
-  <!--/metode pembayaran-->
 
-  <!--subtotal-->
   <div class="m-16 bg-gray-300 p-4">
     <h1 class="text-xl font-bold mb-4">SUBTOTAL</h1>
     <div class="m-4 bg-white p-6">
@@ -110,21 +119,16 @@
             <p class="font-bold">SUBTOTAL</p>
           </div>
           <div class="text-right">
-            <p>Rp 450.000</p>
-            <p>Rp 1.000</p>
+            <p>Rp 1350000</p>
+            <p>Rp 1000</p>
             <p>-</p>
-            <p class="font-bold">Rp 451.000</p>
+            <p class="font-bold">Rp 1351000</p>
           </div>
-        </div>
-        <div class="flex justify-center">
-          <button class="bg-blue-900 text-white px-4 py-2 rounded">BAYAR</button>
         </div>
       </div>
     </div>
   </div>
-  <!--/subtotal-->
 
-  <!--footer-->
   <footer class="bg-blue-900 text-white p-8 mt-8">
     <div class="container mx-auto px-4">
       <div class="flex justify-between">
@@ -164,10 +168,7 @@
       </div>
     </div>
   </footer>
-  <!--/footer-->
 
-  <!--script-->
-  <script src="./index.js"></script>
-  <!--/script-->
+  <?php $conn->close(); ?>
 </body>
 </html>
