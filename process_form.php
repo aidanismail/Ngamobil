@@ -44,8 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'ID_kendaraan' => $ID_kendaraan,
         'ID_penyewa' => $ID_penyewa,
     ]);
-
-    echo "Pemesanan berhasil!";
+    // Redirect to another page on success
+    header("Location: success_page.php");
+    exit;
 } else {
     echo "Invalid request method.";
 }
