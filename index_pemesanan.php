@@ -1,3 +1,15 @@
+<?php
+// index_pemesanan.php
+include 'database.php';
+
+// Retrieve the list of available cars from the database
+$stmt = $pdo->query("SELECT ID_kendaraan, model, harga FROM Kendaraan WHERE status = 'Available'");
+$cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Retrieve the car ID from the URL parameter
+$carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
+
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -95,14 +107,15 @@ include 'database.php';
       <div class="bg-gray-200 p-4 rounded-lg mb-4">
         <h2 class="text-xl font-bold mb-2">Detail Pemesanan</h2>
         <div class="flex space-x-4">
-          <img src="src/agya.jpeg" alt="Toyota Agya" class="w-1/3">
+          <img id="car_image" src="" alt="Selected Car" class="w-1/3">
           <div class="w-2/3 space-y-2">
             <div>
                 <label class="block" for="tanggal_pengembalian">Tanggal Pengembalian:</label>
                 <input type="date" id="tanggal_pengembalian" name="tanggal_pengembalian" class="w-full p-2 rounded border border-gray-300" required>
               </div>
             <div>
-              <label class="block" for="harga">Harga:</label>
+              
+            <p id="car_price" class="text-xl font-bold">Harga: Rp. <span id="harga"></span></p>
               <input type="text" id="harga" name="harga" class="w-full p-2 rounded border border-gray-300" required>
             </div>
             <div>
@@ -158,6 +171,74 @@ include 'database.php';
       </div>
     </div>
 </footer>
+
+<!-- Script to change the car image and price based on the selected car -->
+<script>
+    // Define a mapping object to map car_id to image paths and prices
+    var carInfo = {
+        1: {
+            imagePath: 'images/GT-86.png',  // Map car_id 1 to GT-86.png
+            harga: 1500000.00 // Set the price for car_id 1
+        },
+        2: {
+            imagePath: 'images/Avanza.png',   // Map car_id 2 to Avanza.png
+            harga: 500000.00 // Set the price for car_id 2
+        },
+        3: {
+            imagePath: 'images/Agya.png', // Map car_id 3 to Agya.png
+            harga: 300000.00 // Set the price for car_id 3
+        },
+        4: {
+            imagePath: 'images/Beat.png', // Map car_id 3 to Agya.png
+            harga: 300000.00 // Set the price for car_id 3
+        },
+        5: {
+            imagePath: 'images/HR-V.png', // Map car_id 3 to Agya.png
+            harga: 300000.00 // Set the price for car_id 3
+        },
+        6: {
+            imagePath: 'images/Brio.png', // Map car_id 3 to Agya.png
+            harga: 300000.00 // Set the price for car_id 3
+        },
+        7: {
+            imagePath: 'images/Magnite.png', // Map car_id 3 to Agya.png
+            harga: 300000.00 // Set the price for car_id 3
+        },
+        8: {
+            imagePath: 'images/GrandLivina.png', // Map car_id 3 to Agya.png
+            harga: 300000.00 // Set the price for car_id 3
+        },
+        9: {
+            imagePath: 'images/download.png', // Map car_id 3 to Agya.png
+            harga: 300000.00 // Set the price for car_id 3
+        },
+        // Add more mappings for other cars
+    };
+
+    // Function to update the car image and price based on the selected car ID
+    function updateCarInfo(carId) {
+        var carImage = document.getElementById('car_image');
+        var carPriceSpan = document.getElementById('harga');
+
+        // Get the car info from the mapping object based on the selected car ID
+        var car = carInfo[carId];
+
+        if (car) {
+            // If a valid car info is found, update the image source and price
+            carImage.src = car.imagePath;
+            carImage.alt = 'Selected Car';
+            carPriceSpan.textContent = car.harga.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' }); // Update the price text content
+        } else {
+            // Handle the case when the selected car ID doesn't have corresponding info
+            console.error('No info found for car ID: ' + carId);
+        }
+    }
+
+    // Initialize car info when the page loads
+    var carIdFromUrl = <?php echo json_encode($carId); ?>;
+    updateCarInfo(carIdFromUrl); // Call the function with the car ID from the URL
+</script>
+
 <script src="index.js"></script>
 </body>
 </html>
