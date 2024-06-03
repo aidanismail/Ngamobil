@@ -44,7 +44,7 @@
   <div class="flex items-center justify-center h-screen">
       <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
-          <form id="login-form" action="process_login.php" method="POST">
+          <form id="login-form" action="process_form_login.php" method="POST">
               <div class="mb-4">
                   <label for="email" class="block text-gray-700">Email</label>
                   <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-lg" required>
@@ -56,7 +56,7 @@
               <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-lg">Login</button>
           </form>
           <div class="mt-4 text-center">
-              <a href="register.html" class="w-full inline-block bg-gray-500 text-white p-2 rounded-lg">Register</a>
+              <a href="index_register.html" class="w-full inline-block bg-gray-500 text-white p-2 rounded-lg">Register</a>
           </div>
       </div>
   </div>

@@ -22,24 +22,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password']; // Note: Do not escape the password before verification
 
     // Query to fetch the stored hash and other user data
-    $sql = "SELECT id, password, first_name, last_name FROM penyewa WHERE email = ?";
+    $sql = "SELECT ID_penyewa, password, nama_depan, nama_belakang FROM penyewa WHERE email = ?";
     $stmt = $conn->prepare($sql);
+
+    // Check if the statement was prepared successfully
+    if (!$stmt) {
+        die("Error preparing statement: " . $conn->error);
+    }
+
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $stmt->bind_result($id, $stored_hash, $first_name, $last_name);
+    $stmt->bind_result($ID_penyewa, $stored_hash, $nama_depan, $nama_belakang);
     $stmt->fetch();
     $stmt->close();
 
-    // Verify the password
+    // Verify the password  
     if (password_verify($password, $stored_hash)) {
         // Store user data in session
-        $_SESSION['user_id'] = $id;
-        $_SESSION['first_name'] = $first_name;
-        $_SESSION['last_name'] = $last_name;
+        $_SESSION['user_id'] = $ID_penyewa;
+        $_SESSION['first_name'] = $nama_depan;
+        $_SESSION['last_name'] = $nama_belakang;
         $_SESSION['email'] = $email;
 
-        // Redirect to a protected page
-        header("Location: protected_page.php");
+        // Redirect to index_pemesanan.html after successful login
+        header("Location: index_pemilihan.php");
         exit();
     } else {
         echo "Invalid email or password.";

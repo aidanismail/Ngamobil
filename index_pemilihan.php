@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    // Redirect to login page if not logged in
+    header("Location: index_login.php");
+    exit();
+}
+
+// User is logged in, access session data
+$user_id = $_SESSION['user_id'];
+$first_name = $_SESSION['first_name'];
+$last_name = $_SESSION['last_name'];
+$email = $_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +52,7 @@
 
   <main>
     <h1 class="text-4xl text-center my-8 font-bold">Pilih Teman Anda Untuk Hari Ini</h1>
+    <p class="text-center text-gray-700">Welcome, <?php echo htmlspecialchars($first_name); ?> <?php echo htmlspecialchars($last_name); ?>!</p>
     
     <div class="filters">
       <a href="#toyota"><button class="filter-btn">Toyota</button></a>
