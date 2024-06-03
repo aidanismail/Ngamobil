@@ -1,13 +1,30 @@
 <?php
-// index_pemesanan.php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    // Redirect to login page if not logged in
+    header("Location: index_login.php");
+    exit();
+}
+
+// User is logged in, access session data
+$user_id = $_SESSION['user_id'];
+
+// Include the database connection
 include 'database.php';
+
+// Retrieve the user's information from the database
+$stmt = $pdo->prepare("SELECT nama_depan, nama_belakang, nomor_telepon, email FROM penyewa WHERE ID_penyewa = ?");
+$stmt->execute([$user_id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Retrieve the list of available cars from the database
 $stmt = $pdo->query("SELECT ID_kendaraan, model, harga FROM Kendaraan WHERE status = 'Available'");
 $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 // Retrieve the car ID from the URL parameter
 $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
-
 ?>
 
 <!doctype html>
@@ -19,10 +36,6 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100">
-
-<?php
-include 'database.php';
-?>
 
 <header class="flex items-center justify-between p-1 bg-white shadow-md">
     <div class="flex items-center space-x-1">
@@ -56,16 +69,16 @@ include 'database.php';
         <h2 class="text-xl font-bold mb-2">Informasi Kontak</h2>
         <div class="space-y-2">
           <div>
-            <label class="block" for="nama">Nama:</label>
-            <input type="text" id="nama" name="nama" class="w-full p-2 rounded border border-gray-300" required>
+            <label class="block">Nama:</label>
+            <p class="w-full p-2 rounded border border-gray-300"><?php echo htmlspecialchars($user['nama_depan'] . ' ' . $user['nama_belakang']); ?></p>
           </div>
           <div>
-            <label class="block" for="handphone">Handphone:</label>
-            <input type="text" id="handphone" name="handphone" class="w-full p-2 rounded border border-gray-300" required>
+            <label class="block">Handphone:</label>
+            <p class="w-full p-2 rounded border border-gray-300"><?php echo htmlspecialchars($user['nomor_telepon']); ?></p>
           </div>
           <div>
-            <label class="block" for="email">Email:</label>
-            <input type="email" id="email" name="email" class="w-full p-2 rounded border border-gray-300" required>
+            <label class="block">Email:</label>
+            <p class="w-full p-2 rounded border border-gray-300"><?php echo htmlspecialchars($user['email']); ?></p>
           </div>
         </div>
       </div>
@@ -116,8 +129,7 @@ include 'database.php';
             <div>
               
             <p id="car_price" class="text-xl font-bold">Harga: Rp. <span id="harga"></span></p>
-              <input type="text" id="harga" name="harga" class="w-full p-2 rounded border border-gray-300" required>
-            </div>
+              </div>
             <div>
               <label class="block" for="catatan">Catatan:</label>
               <textarea id="catatan" name="catatan" class="w-full p-2 rounded border border-gray-300"></textarea>

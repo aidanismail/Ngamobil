@@ -1,5 +1,5 @@
 <?php
-// process_form.php
+session_start();
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and execute the SQL query to insert data into the database
-    $sql = "INSERT INTO Pemesanan (waktu_awal, waktu_akhir, harga, lokasi_pengantaran, jam_penjemputan, ID_kendaraan) 
+    $sql = "INSERT INTO Pemesanan (waktu_awal, waktu_akhir, harga, lokasi_pengantaran, jam_penjemputan, ID_kendaraan, ID_penyewa) 
             VALUES (:waktu_awal, :waktu_akhir, :harga, :lokasi_pengantaran, :jam_penjemputan, :ID_kendaraan)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ]);
 
     // Redirect to another page on success
-    header("Location: success_page.php");
+    header("Location: index_pembayaran.php");
     exit;
 } else {
     echo "Invalid request method.";
