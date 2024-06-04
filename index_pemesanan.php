@@ -1,8 +1,18 @@
 <?php
 session_start();
-// Set the car_id in the session
-$_SESSION['car_id'] = $car_id; // assuming $car_id is defined
-?>
+
+// Check if car_id is present in the URL
+if (isset($_GET['car_id'])) {
+    // Retrieve and store car_id from the URL
+    $_SESSION['car_id'] = $_GET['car_id'];
+    // You may also want to validate and sanitize the value here
+} else {
+    // Handle the case when car_id is not present in the URL
+    echo "Error: car_id is missing from the URL.";
+    exit; // Stop further execution
+}
+?>  
+
 
 <?php
 // Check if user is logged in
@@ -62,8 +72,9 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
 </header>
 
 <main class="container mx-auto px-4 py-8">
-    <form action="process_form_pemesanan.php" method="POST" class="bg-white p-6 rounded-lg shadow">
+    <form action="process_form_pemesanan.php?car_id=<?php echo isset($_GET['car_id']) ? urlencode($_GET['car_id']) : ''; ?>" method="POST" class="bg-white p-6 rounded-lg shadow">
       <div class="flex justify-between mb-4 px-12">
+        
         <button type="button" class="bg-blue-600 text-white py-2 px-10 rounded">Pemilihan</button>
         <button type="button" class="bg-blue-600 text-white py-2 px-10 rounded">Pemesanan</button>
         <button type="button" class="bg-blue-600 text-white py-2 px-10 rounded">Pembayaran</button>
@@ -86,6 +97,8 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
           </div>
         </div>
       </div>
+
+      <input type="hidden" name="car_id" value="<?php echo htmlspecialchars($carId); ?>">
 
       <div class="bg-gray-200 p-4 rounded-lg mb-4">
         <h2 class="text-xl font-bold mb-2">Detail Penjemputan</h2>
@@ -143,7 +156,8 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
       </div>
 
       <div class="text-right">
-        <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Pesan Sekarang</button>
+      <input type="hidden" name="car_id" value="<?php echo htmlspecialchars($carId); ?>">
+      <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Pesan Sekarang</button>
       </div>
     </form>
 </main>

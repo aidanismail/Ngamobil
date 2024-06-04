@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['first_name'] = $nama_depan;
         $_SESSION['last_name'] = $nama_belakang;
         $_SESSION['email'] = $email;
-        $_SESSION['nomor_telepon'] = $handphone;
+        $_SESSION['nomor_telepon'] = $nomor_telepon;
 
         // Redirect to index_pemesanan.html after successful login
         header("Location: index_pemilihan.php");
