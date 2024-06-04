@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password']; // Note: Do not escape the password before verification
 
     // Query to fetch the stored hash and other user data
-    $sql = "SELECT ID_penyewa, password, nama_depan, nama_belakang FROM penyewa WHERE email = ?";
+    $sql = "SELECT ID_penyewa, password, nama_depan, nama_belakang, nomor_telepon FROM penyewa WHERE email = ?";
     $stmt = $conn->prepare($sql);
 
     // Check if the statement was prepared successfully
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $stmt->bind_result($ID_penyewa, $stored_hash, $nama_depan, $nama_belakang);
+    $stmt->bind_result($ID_penyewa, $stored_hash, $nama_depan, $nama_belakang, $nomor_telepon);
     $stmt->fetch();
     $stmt->close();
 
