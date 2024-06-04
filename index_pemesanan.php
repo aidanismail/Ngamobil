@@ -1,6 +1,10 @@
 <?php
 session_start();
+// Set the car_id in the session
+$_SESSION['car_id'] = $car_id; // assuming $car_id is defined
+?>
 
+<?php
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     // Redirect to login page if not logged in
@@ -58,7 +62,7 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
 </header>
 
 <main class="container mx-auto px-4 py-8">
-    <form action="process_form.php" method="POST" class="bg-white p-6 rounded-lg shadow">
+    <form action="process_form_pemesanan.php" method="POST" class="bg-white p-6 rounded-lg shadow">
       <div class="flex justify-between mb-4 px-12">
         <button type="button" class="bg-blue-600 text-white py-2 px-10 rounded">Pemilihan</button>
         <button type="button" class="bg-blue-600 text-white py-2 px-10 rounded">Pemesanan</button>
