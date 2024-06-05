@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<?php 
-
-
-?>
-=======
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,14 +9,138 @@
   <title>Ngamobil</title>
 </head>
 <body class="bg-gray-100">
-  <?php include 'database.php'; ?>
+
+  <?php 
+  session_start(); // Ensure session is started
+  include 'database.php'; 
+  ?>
+  <?php
+  // database.php
+  $db_host = 'localhost';
+  $db_user = 'root';
+  $db_password = 'mysql';
+  $db_name = 'ngamobil';
+
+  $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+  ?>
+
+  
+<?php
+// Include database configuration
+include 'database.php'; 
+
+// Check if the ID_pemesanan parameter is set in the URL
+if(isset($_GET['id_pemesanan'])) {
+  $id_pemesanan = $_GET['id_pemesanan'];
+
+  // Fetch details from pemesanan table
+  $sql = "SELECT ID_pemesanan, waktu_awal, waktu_akhir, harga, lokasi_pengantaran,
+          jam_penjemputan, ID_kendaraan, ID_penyewa, keterangan, catatan
+          FROM pemesanan
+          WHERE ID_pemesanan = ?";
+  $stmt = $conn->prepare($sql);
+  
+  if($stmt) {
+      $stmt->bind_param("i", $id_pemesanan);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      
+      $pemesanan_details = $result->fetch_assoc();
+      
+      $stmt->close();
+  } else {
+      echo "Error preparing statement: " . $conn->error;
+  }
+
+  // Fetch additional details from database
+  $sql = "SELECT sk.warna, sk.jenis_bbm, sk.transmisi, sk.jumlah_kursi, sk.tahun
+          FROM spesifikasi_kendaraan sk
+          INNER JOIN kendaraan k ON sk.id_kendaraan = k.ID_kendaraan
+          INNER JOIN pemesanan p ON k.ID_kendaraan = p.ID_kendaraan
+          WHERE p.ID_pemesanan = ?";
+  $stmt = $conn->prepare($sql);
+  
+  if($stmt) {
+      $stmt->bind_param("i", $id_pemesanan);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      
+      $car_details = $result->fetch_assoc();
+      
+      $waktu_awal = new DateTime($pemesanan_details['waktu_awal']);
+      $waktu_akhir = new DateTime($pemesanan_details['waktu_akhir']);
+      $waktu_rental = $waktu_awal->diff($waktu_akhir)->days;
+
+      $stmt->close();
+  } else {
+      echo "Error preparing statement: " . $conn->error;
+  }
+}
+
+// Initialize $jenis_mobil variable
+$jenis_mobil = 'Unknown';
+
+// Create a new SQL query to fetch jenis_mobil
+$sql_jenis_mobil = "SELECT k.jenis_mobil
+                        FROM kendaraan k
+                        INNER JOIN pemesanan p ON k.ID_kendaraan = p.ID_kendaraan
+                        WHERE p.ID_pemesanan = ?";
+$stmt_jenis_mobil = $conn->prepare($sql_jenis_mobil);
+
+if ($stmt_jenis_mobil) {
+    $stmt_jenis_mobil->bind_param("i", $id_pemesanan);
+    $stmt_jenis_mobil->execute();
+    $result_jenis_mobil = $stmt_jenis_mobil->get_result();
+    
+    // Fetch jenis_mobil
+    if ($result_jenis_mobil->num_rows > 0) {
+        $row_jenis_mobil = $result_jenis_mobil->fetch_assoc();
+        $jenis_mobil = $row_jenis_mobil['jenis_mobil'];
+    } else {
+        // Handle if no jenis_mobil found
+        $jenis_mobil = 'Unknown';
+    }
+
+    $stmt_jenis_mobil->close();
+} else {
+    // Handle error preparing statement
+    echo "Error preparing statement: " . $conn->error;
+}
+?>
+<?php
+// Define an array mapping id_kendaraan to the corresponding image file
+$kendaraan_images = array(
+    1 => "images/GT-86.png",
+    2 => "images/Avanza.png",
+    3 => "images/Agya.png",
+    4 => "images/Beat.png",
+    5 => "images/HR-V.png",
+    6 => "images/Brio.png",
+    7 => "images/Magnite.png",
+    8 => "images/GrandLivina.png",
+    9 => "images/download.png"
+);
+
+// Check if the id_kendaraan exists in the mapping array
+if (array_key_exists($id_kendaraan, $kendaraan_images)) {
+    // If it exists, use the corresponding image file
+    $image_src = $kendaraan_images[$id_kendaraan];
+} else {
+    // If it doesn't exist, use a default image or handle it as needed
+    $image_src = "images/bg.png"; // Change "default.png" to the path of your default image
+}
+?>
 
   <header class="flex items-center justify-between p-1 bg-white shadow-md">
     <div class="flex items-center space-x-1">
-      
-      <img src="./src/logo-ngamobil.jpg" alt="logo-website" class="h-16 w-20">
+      <img src="images/logo-ngamobil.jpg" alt="logo-website" class="h-16 w-20">
       <p class="text-xl font-bold">Ngamobil.</p>
     </div>
+
     <nav>
       <div class="hidden md:flex space-x-4 pr-8">
         <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
@@ -36,6 +154,7 @@
         </button>
       </div>
     </nav>
+
   </header>
   <div id="mobile-menu" class="menu-closed md:hidden">
     <a href="#" class="block px-4 py-2 text-gray-700">Home</a>
@@ -46,21 +165,6 @@
     <h1 class="text-xl font-bold mb-4">DETAIL PEMESANAN</h1>
     <div class="m-4 bg-white p-6">
       <div class="flex flex-col space-y-4">
-<<<<<<<< HEAD:index.html
-        <div class="flex flex-row justify-center mx-8 gap-72">
-          <!--img mobil dari db php-->
-          <img src="./src/contoh-mobil.png" alt="contoh-mobil" class="h-auto w-96">
-          <div class="flex flex-col justify-center ">
-            <!--dari database php-->
-            <h2 class="text-xl font-bold mb-2">Toyota Agya</h2>
-            <ul class="list-disc">
-              <li class="py-2">Warna: Putih</li>
-              <li class="py-2">Jenis BBM: Bensin</li>
-              <li class="py-2">Transmisi: Manual</li>
-              <li class="py-2">Jumlah Kursi: 5</li>
-              <li class="py-2">Tahun Produksi: 2020</li>
-              <!--/dari database php-->
-========
         <div class="flex flex-col md:flex-row justify-center mx-8 gap-8 md:gap-72">
           <?php
           $sql = "SELECT * FROM kendaraan WHERE id_kendaraan = 1";
@@ -79,46 +183,35 @@
               ];
           }
           ?>
-          <img src="./src/contoh-mobil.png" alt="contoh-mobil" class="w-full md:w-96 h-auto">
+          <img src = "<?php echo $image_src; ?>" alt="contoh-mobil" class="w-full md:w-96 h-auto">
           <div class="flex flex-col justify-center text-center md:text-left">
-            <h2 class="text-xl font-bold mb-2"><?php echo htmlspecialchars($car['jenis_mobil']); ?></h2>
-            <ul class="list-disc list-inside">
-              <li class="py-2">Warna: <?php echo htmlspecialchars($car['warna']); ?></li>
-              <li class="py-2">Jenis BBM: <?php echo htmlspecialchars($car['jenis_bbm']); ?></li>
-              <li class="py-2">Transmisi: <?php echo htmlspecialchars($car['transmisi']); ?></li>
-              <li class="py-2">Jumlah Kursi: <?php echo htmlspecialchars($car['jumlah_kursi']); ?></li>
-              <li class="py-2">Tahun Produksi: <?php echo htmlspecialchars($car['tahun']); ?></li>
->>>>>>>> 7dda5828948cb8f3bb4f00ebadc7168d293d794b:index.php
-            </ul>
+          <h2 class="text-xl font-bold mb-2"><?php echo $jenis_mobil; ?></h2>
+        <ul class="list-disc list-inside">
+            <li class="py-2">Warna: <?php echo htmlspecialchars($car_details['warna']); ?></li>
+            <li class="py-2">Jenis BBM: <?php echo htmlspecialchars($car_details['jenis_bbm']); ?></li>
+            <li class="py-2">Transmisi: <?php echo htmlspecialchars($car_details['transmisi']); ?></li>
+            <li class="py-2">Jumlah Kursi: <?php echo htmlspecialchars($car_details['jumlah_kursi']); ?></li>
+            <li class="py-2">Tahun Produksi: <?php echo htmlspecialchars($car_details['tahun']); ?></li>
+        </ul>
           </div>
         </div>
         <div class="py-8">
-<<<<<<<< HEAD:index.html
-          <!--dari database php-->
-          <ul>
-========
-          <ul class="list-disc list-inside">
->>>>>>>> 7dda5828948cb8f3bb4f00ebadc7168d293d794b:index.php
-            <li class="py-2">ID_Pemesanan: 123456</li>
-            <li class="py-2">Waktu Rental: 3 Hari</li>
-            <li class="py-2">Harga: Rp 450,000/hari</li>
-            <li class="py-2">Catatan: Mohon hubungi 30 menit sebelum pengambilan.</li>
-          </ul>
-          <!--/dari database php-->
+        <ul class="list-disc list-inside">
+            <li class="py-2">ID_Pemesanan: <?php echo htmlspecialchars($pemesanan_details['ID_pemesanan']); ?></li>
+            <li class="py-2">Waktu Rental: <?php echo $waktu_rental; ?> hari</li>
+            <li class="py-2">Harga: Rp <?php echo htmlspecialchars($pemesanan_details['harga']); ?></li>
+            <li class="py-2">Catatan: <?php echo htmlspecialchars($pemesanan_details['catatan']); ?></li>
+        </ul>
+
         </div>
       </div>
     </div>
   </div>
 
-<<<<<<<< HEAD:index.html
-  <!--metode pembayaran-->
-  <!--input masuk ke database-->
-========
->>>>>>>> 7dda5828948cb8f3bb4f00ebadc7168d293d794b:index.php
   <div id="metode-pembayaran" class="m-16 bg-gray-300 p-4">
     <h1 class="text-xl font-bold mb-4">METODE PEMBAYARAN</h1>
     <div class="m-4 bg-white p-6">
-      <form class="flex flex-col space-y-4" action="process_form.php" method="POST">
+      <form class="flex flex-col space-y-4" action="process_form_pembayaran.php" method="POST">
         <label class="flex items-center justify-between cursor-pointer">
           <span class="text-lg font-semibold">Bayar di Tempat</span>
           <input type="radio" name="payment_method" value="bayar-di-tempat" required>
@@ -146,7 +239,6 @@
     <div class="m-4 bg-white p-6">
       <div class="flex flex-col space-y-4">
         <div class="flex justify-between">
-          <!--dari database php-->
           <div>
             <p>Biaya Sewa:</p>
             <p>Biaya Admin:</p>
@@ -154,10 +246,10 @@
             <p class="font-bold">SUBTOTAL</p>
           </div>
           <div class="text-right">
-            <p>Rp 1350000</p>
-            <p>Rp 1000</p>
-            <p>-</p>
-            <p class="font-bold">Rp 1351000</p>
+            <p>Rp <?php  echo ($pemesanan_details['harga'])?></p>
+            <p>Rp -</p>
+            <p>Rp -</p>
+            <p class="font-bold">Rp <?php  echo ($pemesanan_details['harga'])?></p>
           </div>
         </div>
       </div>
@@ -207,4 +299,3 @@
   <?php $conn->close(); ?>
 </body>
 </html>
->>>>>>> 7dda5828948cb8f3bb4f00ebadc7168d293d794b
