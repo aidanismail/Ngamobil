@@ -128,10 +128,10 @@ $kendaraan_images = array(
 // Check if the id_kendaraan exists in the mapping array
 if (array_key_exists($id_kendaraan, $kendaraan_images)) {
     // If it exists, use the corresponding image file
-    $image_src = "./src/" . $kendaraan_images[$id_kendaraan];
+    $image_src = $kendaraan_images[$id_kendaraan];
 } else {
     // If it doesn't exist, use a default image or handle it as needed
-    $image_src = "./src/default.png"; // Change "default.png" to the path of your default image
+    $image_src = "images/bg.png"; // Change "default.png" to the path of your default image
 }
 ?>
 
