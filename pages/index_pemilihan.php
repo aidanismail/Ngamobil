@@ -79,7 +79,28 @@ $email = $_SESSION['email'];
     </div>
     <!--/wrapper-->
 
-
+    <div class="flex justify-between items-center mb-16 space-x-4">
+      <div class="flex-1 text-center">
+        <div class="w-10 h-10 bg-blue-900 text-white rounded-full mx-auto flex items-center justify-center">
+          1
+        </div>
+        <div class="mt-2 text-black">Pemilihan</div>
+      </div>
+      <div class="flex-1 border-t-4 border-gray-400"></div>
+      <div class="flex-1 text-center">
+        <div class="w-10 h-10 bg-gray-200 text-white rounded-full mx-auto flex items-center justify-center">
+          2
+        </div>
+        <div class="mt-2 text-gray-400">Pemesanan</div>
+      </div>
+      <div class="flex-1 border-t-4 border-gray-200"></div>
+      <div class="flex-1 text-center">
+        <div class="w-10 h-10 bg-gray-200 text-gray-600 rounded-full mx-auto flex items-center justify-center">
+          3
+        </div>
+        <div class="mt-2 text-gray-400">Pembayaran</div>
+      </div>
+    </div>
     <!-- Toyota Section -->
     <h2 id="toyota" class="text-4xl text-center my-8 font-bold text-black">Toyota</h2>
     <div class="container mx-auto px-4 py-8">
@@ -102,7 +123,7 @@ $email = $_SESSION['email'];
             <div class="card-content p-4">
               <p class="text-lg font-semibold">Rp 500.000</p>
               <p>2016 | 15k | auto | Pertalite</p>
-              <a href="index_pemesanan.php?car_id=2" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php?car_id=2" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
           <!-- Card for Toyota Agya -->
@@ -112,7 +133,7 @@ $email = $_SESSION['email'];
             <div class="card-content p-4">
               <p class="text-lg font-semibold">Rp 300.000</p>
               <p>2023 | 15k | auto | Pertalite</p>
-              <a href="index_pemesanan.php?car_id=3" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php.php?car_id=3" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
         </div>
@@ -131,7 +152,7 @@ $email = $_SESSION['email'];
             <div class="card-content p-4">
               <p class="text-lg font-semibold">Rp 1.000.000</p>
               <p>2004 | 15k | auto | Pertalite</p>
-              <a href="index_pemesanan.php?car_id=4" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php?car_id=4" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
           <!-- Card for Honda HR-V -->
@@ -141,7 +162,7 @@ $email = $_SESSION['email'];
             <div class="card-content p-4">
               <p class="text-lg font-semibold">Rp 700.000</p>
               <p>2023 | 15k | auto | Pertamax</p>
-              <a href="index_pemesanan.php?car_id=5" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php?car_id=5" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
           <!-- Card for Honda Brio -->
@@ -151,7 +172,7 @@ $email = $_SESSION['email'];
             <div class="card-content p-4">
               <p class="text-lg font-semibold">Rp 300.000</p>
               <p>2016 | 15k | auto | Pertalite</p>
-              <a href="index_pemesanan.php?car_id=6" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php?car_id=6" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
         </div>
@@ -169,7 +190,7 @@ $email = $_SESSION['email'];
             <div class="card-content p-4">
               <p class="text-lg font-semibold">Rp 500.000</p>
               <p>2018 | 20k | manual | Pertamax</p>
-              <a href="index_pemesanan.php?car_id=7" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php?car_id=7" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
           <!-- Card for Nissan Grand Livina -->
@@ -179,7 +200,7 @@ $email = $_SESSION['email'];
             <div class="card-content p-4">
               <p class="text-lg font-semibold">Rp 300.000</p>
               <p>2017 | 18k | auto | Pertalite</p>
-              <a href="index_pemesanan.php?car_id=8" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php?car_id=8" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
           <!-- Card for Nissan Terra -->
@@ -190,7 +211,7 @@ $email = $_SESSION['email'];
               <p class="text-lg font-semibold">Rp 1.000.000</p>
               <p>2020 | 10k | auto | Pertamax</p>
               <!-- Using <a> tag styled as a button -->
-              <a href="index_pemesanan.php?car_id=9" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php?car_id=9" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
         </div>

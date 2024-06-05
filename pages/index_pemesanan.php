@@ -18,7 +18,7 @@ if (isset($_GET['car_id'])) {
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
   // Redirect to login page if not logged in
-  header("Location: index_login.php");
+  header("Location: ../pages/index_login.php");
   exit();
 }
 
@@ -26,8 +26,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Include the database connection
-include_once("../php/database.php"); // Update the path accordingly
-
+include '../php/database.php';
 
 // Retrieve the user's information from the database
 $stmt = $pdo->prepare("SELECT nama_depan, nama_belakang, nomor_telepon, email FROM penyewa WHERE ID_penyewa = ?");
@@ -56,7 +55,7 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
 
   <header class="flex items-center justify-between p-1 bg-white shadow-md">
     <div class="flex items-center space-x-1">
-      <img src="src/logo.png" alt="logo-website" class="h-16 w-20">
+      <img src="../src/logo-ngamobil.jpg" alt="logo-website" class="h-16 w-20">
       <p class="text-xl font-bold">Ngamobil.</p>
     </div>
     <nav>
@@ -73,15 +72,31 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
       </div>
     </nav>
   </header>
+  <div class="flex justify-between items-center my-8 space-x-4">
+    <div class="flex-1 text-center">
+      <div class="w-10 h-10 bg-blue-900 text-white rounded-full mx-auto flex items-center justify-center">
+        1
+      </div>
+      <div class="mt-2 text-black">Pemilihan</div>
+    </div>
+    <div class="flex-1 border-t-4 border-gray-400"></div>
+    <div class="flex-1 text-center">
+      <div class="w-10 h-10 bg-gray-200 text-white rounded-full mx-auto flex items-center justify-center">
+        2
+      </div>
+      <div class="mt-2 text-gray-400">Pemesanan</div>
+    </div>
+    <div class="flex-1 border-t-4 border-gray-200"></div>
+    <div class="flex-1 text-center">
+      <div class="w-10 h-10 bg-gray-200 text-gray-600 rounded-full mx-auto flex items-center justify-center">
+        3
+      </div>
+      <div class="mt-2 text-gray-400">Pembayaran</div>
+    </div>
+  </div>
 
   <main class="container mx-auto px-4 py-8">
-    <form action="process_form_pemesanan.php?car_id=<?php echo isset($_GET['car_id']) ? urlencode($_GET['car_id']) : ''; ?>" method="POST" class="bg-white p-6 rounded-lg shadow">
-      <div class="flex justify-between mb-4 px-12">
-
-        <button type="button" class="bg-blue-600 text-white py-2 px-10 rounded">Pemilihan</button>
-        <button type="button" class="bg-blue-600 text-white py-2 px-10 rounded">Pemesanan</button>
-        <button type="button" class="bg-blue-600 text-white py-2 px-10 rounded">Pembayaran</button>
-      </div>
+    <form action="../php/process_form_pemesanan.php?car_id=<?php echo isset($_GET['car_id']) ? urlencode($_GET['car_id']) : ''; ?>" method="POST" class="bg-white p-6 rounded-lg shadow">
 
       <div class="bg-gray-200 p-4 rounded-lg mb-4">
         <h2 class="text-xl font-bold mb-2">Informasi Kontak</h2>
@@ -210,39 +225,39 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
     // Define a mapping object to map car_id to image paths and prices
     var carInfo = {
       1: {
-        imagePath: 'images/GT-86.png', // Map car_id 1 to GT-86.png
+        imagePath: '../src/GT-86.png', // Map car_id 1 to GT-86.png
         harga: 1500000.00 // Set the price for car_id 1
       },
       2: {
-        imagePath: 'images/Avanza.png', // Map car_id 2 to Avanza.png
+        imagePath: '../src/Avanza.png', // Map car_id 2 to Avanza.png
         harga: 500000.00 // Set the price for car_id 2
       },
       3: {
-        imagePath: 'images/Agya.png', // Map car_id 3 to Agya.png
+        imagePath: '../src/Agya.png', // Map car_id 3 to Agya.png
         harga: 300000.00 // Set the price for car_id 3
       },
       4: {
-        imagePath: 'images/Beat.png', // Map car_id 3 to Agya.png
+        imagePath: '../src/Beat.png', // Map car_id 3 to Agya.png
         harga: 1000000.00 // Set the price for car_id 3
       },
       5: {
-        imagePath: 'images/HR-V.png', // Map car_id 3 to Agya.png
+        imagePath: '../src/HR-V.png', // Map car_id 3 to Agya.png
         harga: 700000.00 // Set the price for car_id 3
       },
       6: {
-        imagePath: 'images/Brio.png', // Map car_id 3 to Agya.png
+        imagePath: '../src/Brio.png', // Map car_id 3 to Agya.png
         harga: 300000.00 // Set the price for car_id 3
       },
       7: {
-        imagePath: 'images/Magnite.png', // Map car_id 3 to Agya.png
+        imagePath: '../src/Magnite.png', // Map car_id 3 to Agya.png
         harga: 500000.00 // Set the price for car_id 3
       },
       8: {
-        imagePath: 'images/GrandLivina.png', // Map car_id 3 to Agya.png
+        imagePath: '../src/GrandLivina.png', // Map car_id 3 to Agya.png
         harga: 300000.00 // Set the price for car_id 3
       },
       9: {
-        imagePath: 'images/download.png', // Map car_id 3 to Agya.png
+        imagePath: '../src/terra.png', // Map car_id 3 to Agya.png
         harga: 1000000.00 // Set the price for car_id 3
       },
       // Add more mappings for other cars
