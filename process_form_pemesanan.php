@@ -25,8 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         isset($_POST['tanggal_penjemputan']) && isset($_POST['keterangan']) && isset($_POST['tanggal_pengembalian']) &&
         isset($_POST['catatan']) && isset($_GET['car_id'])
     ) {
-        echo "All form fields are set and not empty.<br>";
-
         // Retrieve form data
         $tempat = $_POST['tempat'];
         $jam_penjemputan = $_POST['jam_penjemputan'];
@@ -62,9 +60,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error fetching harga.";
             exit;
         }
-
         // Close the statement
         $stmt->close();
+
+        // Calculate the duration in days
+        $datetime1 = new DateTime($tanggal_penjemputan);
+        $datetime2 = new DateTime($tanggal_pengembalian);
+        $interval = $datetime1->diff($datetime2);
+        $duration_days = $interval->days;
+
+        // Calculate the total cost
+        $total_cost = $harga * $duration_days;
 
         // Prepare and execute the SQL query to insert data into the database
         $sql = "INSERT INTO Pemesanan (waktu_awal, waktu_akhir, lokasi_pengantaran, jam_penjemputan, keterangan, catatan, ID_kendaraan, ID_penyewa, harga) 
@@ -75,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Error preparing statement: " . $conn->error);
         }
 
-        $stmt->bind_param("ssssssiii", $tanggal_penjemputan, $tanggal_pengembalian, $tempat, $jam_penjemputan, $keterangan, $catatan, $car_id, $user_id, $harga);
+        $stmt->bind_param("ssssssiii", $tanggal_penjemputan, $tanggal_pengembalian, $tempat, $jam_penjemputan, $keterangan, $catatan, $car_id, $user_id, $total_cost);
         $stmt->execute();
 
         // Check for errors in execution
@@ -84,23 +90,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
+        // Get the ID_pemesanan of the newly inserted row
+        $id_pemesanan = $stmt->insert_id;
+
         // Close the statement
         $stmt->close();
 
-        // Redirect to another page on success
-        header("Location: index_pembayaran.php");
+        // Redirect to another page on success with the ID_pemesanan appended as a query parameter
+        header("Location: index_pembayaran.php?id_pemesanan=" . $id_pemesanan);
         exit;
     } else {
         echo "Error: All form fields are required.";
-        // Dump the contents of the $_POST array
-        echo "Contents of \$_POST array:<br>";
-        var_dump($_POST);
-        echo "<br><br>";
-
-        // Dump the contents of the $_SESSION array
-        echo "Contents of \$_SESSION array:<br>";
-        var_dump($_SESSION);
-        echo "<br><br>";
     }
 } else {
     echo "Error: Invalid request method.";

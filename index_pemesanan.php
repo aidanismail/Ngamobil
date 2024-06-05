@@ -220,11 +220,11 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
         },
         4: {
             imagePath: 'images/Beat.png', // Map car_id 3 to Agya.png
-            harga: 300000.00 // Set the price for car_id 3
+            harga: 1000000.00 // Set the price for car_id 3
         },
         5: {
             imagePath: 'images/HR-V.png', // Map car_id 3 to Agya.png
-            harga: 300000.00 // Set the price for car_id 3
+            harga: 700000.00 // Set the price for car_id 3
         },
         6: {
             imagePath: 'images/Brio.png', // Map car_id 3 to Agya.png
@@ -232,7 +232,7 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
         },
         7: {
             imagePath: 'images/Magnite.png', // Map car_id 3 to Agya.png
-            harga: 300000.00 // Set the price for car_id 3
+            harga: 500000.00 // Set the price for car_id 3
         },
         8: {
             imagePath: 'images/GrandLivina.png', // Map car_id 3 to Agya.png
@@ -240,7 +240,7 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
         },
         9: {
             imagePath: 'images/download.png', // Map car_id 3 to Agya.png
-            harga: 300000.00 // Set the price for car_id 3
+            harga: 1000000.00 // Set the price for car_id 3
         },
         // Add more mappings for other cars
     };

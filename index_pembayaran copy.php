@@ -33,106 +33,85 @@
 // Include database configuration
 include 'database.php'; 
 
-// Check if the ID_pemesanan parameter is set in the URL
 if(isset($_GET['id_pemesanan'])) {
   $id_pemesanan = $_GET['id_pemesanan'];
-
+  
   // Fetch details from pemesanan table
-  $sql = "SELECT ID_pemesanan, waktu_awal, waktu_akhir, harga, lokasi_pengantaran,
-          jam_penjemputan, ID_kendaraan, ID_penyewa, keterangan, catatan
-          FROM pemesanan
-          WHERE ID_pemesanan = ?";
+  $sql = "SELECT * FROM pemesanan WHERE ID_pemesanan = ?";
   $stmt = $conn->prepare($sql);
   
   if($stmt) {
+      // Bind the parameter
       $stmt->bind_param("i", $id_pemesanan);
+      
+      // Execute the statement
       $stmt->execute();
+      
+      // Store the result
       $result = $stmt->get_result();
       
-      $pemesanan_details = $result->fetch_assoc();
+      // Check if query executed successfully
+      if($result->num_rows > 0) {
+          $pemesanan_details = $result->fetch_assoc();
+      } else {
+          // If no data found, assign default values
+          $pemesanan_details = [
+              'ID_Pemesanan' => 'Unknown',
+              'Waktu_Rental' => 'Unknown',
+              'Harga' => 'Unknown',
+              'Catatan' => 'Unknown',
+          ];
+      }
       
-      $stmt->close();
-  } else {
-      echo "Error preparing statement: " . $conn->error;
-  }
-
-  // Fetch additional details from database
-  $sql = "SELECT sk.warna, sk.jenis_bbm, sk.transmisi, sk.jumlah_kursi, sk.tahun
-          FROM spesifikasi_kendaraan sk
-          INNER JOIN kendaraan k ON sk.id_kendaraan = k.ID_kendaraan
-          INNER JOIN pemesanan p ON k.ID_kendaraan = p.ID_kendaraan
-          WHERE p.ID_pemesanan = ?";
-  $stmt = $conn->prepare($sql);
-  
-  if($stmt) {
-      $stmt->bind_param("i", $id_pemesanan);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      
-      $car_details = $result->fetch_assoc();
-      
-      $waktu_awal = new DateTime($pemesanan_details['waktu_awal']);
-      $waktu_akhir = new DateTime($pemesanan_details['waktu_akhir']);
-      $waktu_rental = $waktu_awal->diff($waktu_akhir)->days;
-
+      // Close the statement
       $stmt->close();
   } else {
       echo "Error preparing statement: " . $conn->error;
   }
 }
 
-// Initialize $jenis_mobil variable
-$jenis_mobil = 'Unknown';
-
-// Create a new SQL query to fetch jenis_mobil
-$sql_jenis_mobil = "SELECT k.jenis_mobil
-                        FROM kendaraan k
-                        INNER JOIN pemesanan p ON k.ID_kendaraan = p.ID_kendaraan
-                        WHERE p.ID_pemesanan = ?";
-$stmt_jenis_mobil = $conn->prepare($sql_jenis_mobil);
-
-if ($stmt_jenis_mobil) {
-    $stmt_jenis_mobil->bind_param("i", $id_pemesanan);
-    $stmt_jenis_mobil->execute();
-    $result_jenis_mobil = $stmt_jenis_mobil->get_result();
+// Check if the ID_pemesanan parameter is set in the URL
+if(isset($_GET['id_pemesanan'])) {
+    $id_pemesanan = $_GET['id_pemesanan'];
     
-    // Fetch jenis_mobil
-    if ($result_jenis_mobil->num_rows > 0) {
-        $row_jenis_mobil = $result_jenis_mobil->fetch_assoc();
-        $jenis_mobil = $row_jenis_mobil['jenis_mobil'];
+    // Fetch additional details from database
+    $sql = "SELECT sk.warna, sk.jenis_bbm, sk.transmisi, sk.jumlah_kursi, sk.tahun
+            FROM spesifikasi_kendaraan sk
+            INNER JOIN kendaraan k ON sk.id_kendaraan = k.ID_kendaraan
+            INNER JOIN pemesanan p ON k.ID_kendaraan = p.ID_kendaraan
+            WHERE p.ID_pemesanan = ?";
+    $stmt = $conn->prepare($sql);
+    
+    if($stmt) {
+        // Bind the parameter
+        $stmt->bind_param("i", $id_pemesanan);
+        
+        // Execute the statement
+        $stmt->execute();
+        
+        // Store the result
+        $result = $stmt->get_result();
+        
+        // Check if query executed successfully
+        if($result->num_rows > 0) {
+            $car_details = $result->fetch_assoc();
+        } else {
+            // If no data found, assign default values
+            $car_details = [
+                'warna' => 'Unknown',
+                'jenis_bbm' => 'Unknown',
+                'transmisi' => 'Unknown',
+                'jumlah_kursi' => 'Unknown',
+                'tahun' => 'Unknown',
+            ];
+        }
+        
+        // Close the statement
+        $stmt->close();
     } else {
-        // Handle if no jenis_mobil found
-        $jenis_mobil = 'Unknown';
+        echo "Error preparing statement: " . $conn->error;
     }
-
-    $stmt_jenis_mobil->close();
-} else {
-    // Handle error preparing statement
-    echo "Error preparing statement: " . $conn->error;
-}
-?>
-<?php
-// Define an array mapping id_kendaraan to the corresponding image file
-$kendaraan_images = array(
-    1 => "images/GT-86.png",
-    2 => "images/Avanza.png",
-    3 => "images/Agya.png",
-    4 => "images/Beat.png",
-    5 => "images/HR-V.png",
-    6 => "images/Brio.png",
-    7 => "images/Magnite.png",
-    8 => "images/GrandLivina.png",
-    9 => "images/download.png"
-);
-
-// Check if the id_kendaraan exists in the mapping array
-if (array_key_exists($id_kendaraan, $kendaraan_images)) {
-    // If it exists, use the corresponding image file
-    $image_src = "./src/" . $kendaraan_images[$id_kendaraan];
-} else {
-    // If it doesn't exist, use a default image or handle it as needed
-    $image_src = "./src/default.png"; // Change "default.png" to the path of your default image
-}
+  }
 ?>
 
   <header class="flex items-center justify-between p-1 bg-white shadow-md">
@@ -140,7 +119,6 @@ if (array_key_exists($id_kendaraan, $kendaraan_images)) {
       <img src="images/logo-ngamobil.jpg" alt="logo-website" class="h-16 w-20">
       <p class="text-xl font-bold">Ngamobil.</p>
     </div>
-
     <nav>
       <div class="hidden md:flex space-x-4 pr-8">
         <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
@@ -154,7 +132,6 @@ if (array_key_exists($id_kendaraan, $kendaraan_images)) {
         </button>
       </div>
     </nav>
-
   </header>
   <div id="mobile-menu" class="menu-closed md:hidden">
     <a href="#" class="block px-4 py-2 text-gray-700">Home</a>
@@ -183,9 +160,9 @@ if (array_key_exists($id_kendaraan, $kendaraan_images)) {
               ];
           }
           ?>
-          <img src = "<?php echo $image_src; ?>" alt="contoh-mobil" class="w-full md:w-96 h-auto">
+          <img src="./src/contoh-mobil.png" alt="contoh-mobil" class="w-full md:w-96 h-auto">
           <div class="flex flex-col justify-center text-center md:text-left">
-          <h2 class="text-xl font-bold mb-2"><?php echo $jenis_mobil; ?></h2>
+          <h2 class="text-xl font-bold mb-2"><?php echo htmlspecialchars($car_details['jenis_mobil']); ?></h2>
         <ul class="list-disc list-inside">
             <li class="py-2">Warna: <?php echo htmlspecialchars($car_details['warna']); ?></li>
             <li class="py-2">Jenis BBM: <?php echo htmlspecialchars($car_details['jenis_bbm']); ?></li>
@@ -197,10 +174,10 @@ if (array_key_exists($id_kendaraan, $kendaraan_images)) {
         </div>
         <div class="py-8">
         <ul class="list-disc list-inside">
-            <li class="py-2">ID_Pemesanan: <?php echo htmlspecialchars($pemesanan_details['ID_pemesanan']); ?></li>
-            <li class="py-2">Waktu Rental: <?php echo $waktu_rental; ?> hari</li>
-            <li class="py-2">Harga: Rp <?php echo htmlspecialchars($pemesanan_details['harga']); ?></li>
-            <li class="py-2">Catatan: <?php echo htmlspecialchars($pemesanan_details['catatan']); ?></li>
+            <li class="py-2">ID_Pemesanan: <?php echo htmlspecialchars($pemesanan_details['ID_Pemesanan']); ?></li>
+            <li class="py-2">Waktu Rental: <?php echo htmlspecialchars($pemesanan_details['Waktu_Rental']); ?></li>
+            <li class="py-2">Harga: Rp <?php echo htmlspecialchars($pemesanan_details['Harga']); ?>/hari</li>
+            <li class="py-2">Catatan: <?php echo htmlspecialchars($pemesanan_details['Catatan']); ?></li>
         </ul>
 
         </div>
@@ -246,10 +223,10 @@ if (array_key_exists($id_kendaraan, $kendaraan_images)) {
             <p class="font-bold">SUBTOTAL</p>
           </div>
           <div class="text-right">
-            <p>Rp <?php  echo ($pemesanan_details['harga'])?></p>
-            <p>Rp -</p>
-            <p>Rp -</p>
-            <p class="font-bold">Rp <?php  echo ($pemesanan_details['harga'])?></p>
+            <p>Rp 1350000</p>
+            <p>Rp 1000</p>
+            <p>-</p>
+            <p class="font-bold">Rp 1351000</p>
           </div>
         </div>
       </div>
