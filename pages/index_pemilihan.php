@@ -40,7 +40,7 @@ $email = $_SESSION['email'];
     <nav>
       <div class="hidden md:flex space-x-4 pr-8">
         <a href="../pages/index_pemilihan.php" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
-        <a href="../pages/" class="rounded-md text-black hover:text-gray-500 p-2">Log</a>
+        <a href="../pages/index_aktivitas_log.php" class="rounded-md text-black hover:text-gray-500 p-2">Log</a>
       </div>
       <div class="md:hidden">
         <button id="menu-btn" class="text-gray-700 focus:outline-none">

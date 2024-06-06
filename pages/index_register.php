@@ -62,7 +62,7 @@
                     <label for="password" class="block text-gray-700">Password</label>
                     <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-lg" required>
                 </div>
-                <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-lg">Register</button>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-500 text-white p-2 rounded-lg">Register</button>
             </form>
         </div>
     </div>
