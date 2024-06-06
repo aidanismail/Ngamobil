@@ -28,19 +28,6 @@
       <img src="/Ngamobil/src/logo-ngamobil.jpg" alt="logo-website" class="h-16 w-20">
       <p class="text-xl font-bold">Ngamobil.</p>
     </div>
-    <nav>
-      <div class="hidden md:flex space-x-4 pr-8">
-        <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
-        <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Contact</a>
-      </div>
-      <div class="md:hidden">
-        <button id="menu-btn" class="text-gray-700 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-    </nav>
   </header>
   <div class="background-image"></div>
   <div class="flex items-center justify-center h-screen">

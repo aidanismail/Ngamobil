@@ -26,7 +26,7 @@ $email = $_SESSION['email'];
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <title>3x3 Card Grid</title>
+  <title>Pemilihan</title>
 </head>
 
 <body>
@@ -39,8 +39,8 @@ $email = $_SESSION['email'];
     </div>
     <nav>
       <div class="hidden md:flex space-x-4 pr-8">
-        <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
-        <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Contact</a>
+        <a href="../pages/index_pemilihan.php" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
+        <a href="../pages/" class="rounded-md text-black hover:text-gray-500 p-2">Log</a>
       </div>
       <div class="md:hidden">
         <button id="menu-btn" class="text-gray-700 focus:outline-none">
@@ -133,7 +133,7 @@ $email = $_SESSION['email'];
             <div class="card-content p-4">
               <p class="text-lg font-semibold">Rp 300.000</p>
               <p>2023 | 15k | auto | Pertalite</p>
-              <a href="../pages/index_pemesanan.php.php?car_id=3" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
+              <a href="../pages/index_pemesanan.php?car_id=3" class="mt-4 bg-blue-800 text-white text-center p-2 cursor-pointer block"> Rental </a>
             </div>
           </div>
         </div>

@@ -49,6 +49,7 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
+  <title>Pemesanan</title>
 </head>
 
 <body class="bg-gray-100">
@@ -60,8 +61,8 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
     </div>
     <nav>
       <div class="hidden md:flex space-x-4 pr-8">
-        <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
-        <a href="#" class="rounded-md text-black hover:text-gray-500 p-2">Contact</a>
+        <a href="../pages/index_pemilihan.php" class="rounded-md text-black hover:text-gray-500 p-2">Home</a>
+        <a href="../pages/" class="rounded-md text-black hover:text-gray-500 p-2">Log</a>
       </div>
       <div class="md:hidden">
         <button id="menu-btn" class="text-gray-700 focus:outline-none">
