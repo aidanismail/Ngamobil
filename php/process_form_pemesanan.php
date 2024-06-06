@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
 
         // Redirect to another page on success with the ID_pemesanan appended as a query parameter
-        header("Location: index_pembayaran.php?id_pemesanan=" . $id_pemesanan);
+        header("Location: ../pages/index_pembayaran.php?id_pemesanan=" . $id_pemesanan);
         exit;
     } else {
         echo "Error: All form fields are required.";
@@ -108,4 +108,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close the connection
 $conn->close();
-?>
