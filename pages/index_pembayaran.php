@@ -292,7 +292,7 @@
   <div id="metode-pembayaran" class="m-16 bg-gray-300 p-4">
     <h1 class="text-xl font-bold mb-4">METODE PEMBAYARAN</h1>
     <div class="m-4 bg-white p-6">
-      <form class="flex flex-col space-y-4" action="../php/process_form_pembayaran.php" method="POST">
+      <form id="payment-form" class="flex flex-col space-y-4" action="../php/process_form_pembayaran.php" method="POST">
         <label class="flex items-center justify-between cursor-pointer">
           <span class="text-lg font-semibold">Bayar di Tempat</span>
           <input type="radio" name="payment_method" value="bayar-di-tempat" required>
@@ -310,10 +310,11 @@
         </label>
         <input type="hidden" name="car_id" value="<?php echo htmlspecialchars($car['id_kendaraan']); ?>">
         <input type="hidden" name="total_harga" value="1350000"> <!-- Example total price -->
-        <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded">BAYAR</button>
+        <button id="bayar-button" type="submit" class="bg-blue-900 text-white px-4 py-2 rounded">BAYAR</button>
       </form>
     </div>
   </div>
+
 
 
   <footer class="bg-blue-900 text-white p-8 mt-8">
@@ -357,6 +358,23 @@
   </footer>
 
   <?php $conn->close(); ?>
+
+
+  <script>
+    // Get the payment form and bayar button
+    const paymentForm = document.getElementById('payment-form');
+    const bayarButton = document.getElementById('bayar-button');
+
+    // Add event listener to the payment form
+    paymentForm.addEventListener('change', function() {
+      // Enable the bayar button if a payment method is selected
+      if (document.querySelector('input[name="payment_method"]:checked')) {
+        bayarButton.disabled = false;
+      } else {
+        bayarButton.disabled = true;
+      }
+    });
+  </script>
 </body>
 
 </html>

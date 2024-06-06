@@ -79,12 +79,12 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
       </div>
       <div class="mt-2 text-black">Pemilihan</div>
     </div>
-    <div class="flex-1 border-t-4 border-gray-400"></div>
+    <div class="flex-1 border-t-4 border-blue-900"></div>
     <div class="flex-1 text-center">
-      <div class="w-10 h-10 bg-gray-200 text-white rounded-full mx-auto flex items-center justify-center">
+      <div class="w-10 h-10 bg-blue-900 text-white rounded-full mx-auto flex items-center justify-center">
         2
       </div>
-      <div class="mt-2 text-gray-400">Pemesanan</div>
+      <div class="mt-2 text-black">Pemesanan</div>
     </div>
     <div class="flex-1 border-t-4 border-gray-200"></div>
     <div class="flex-1 text-center">
@@ -156,7 +156,7 @@ $carId = isset($_GET['car_id']) ? $_GET['car_id'] : null;
         <h2 class="text-xl font-bold mb-2">Detail Pemesanan</h2>
         <div class="flex space-x-4">
           <img id="car_image" src="" alt="Selected Car" class="w-1/3">
-          <div class="w-2/3 space-y-2">
+          <div class="w-2/3 space-y-8">
             <div>
               <label class="block" for="tanggal_pengembalian">Tanggal Pengembalian:</label>
               <input type="date" id="tanggal_pengembalian" name="tanggal_pengembalian" class="w-full p-2 rounded border border-gray-300" required>
