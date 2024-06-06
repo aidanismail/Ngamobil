@@ -11,6 +11,24 @@
             margin: 0;
             padding: 0;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
     </style>
 </head>
 
@@ -44,6 +62,7 @@
                         <th class="py-2 px-4 border-b">Nama Mobil</th>
                         <th class="py-2 px-4 border-b">Waktu Peminjaman</th>
                         <th class="py-2 px-4 border-b">Waktu Pengembalian</th>
+                        <th class="py-2 px-4 border-b">Harga</th>
                         <th class="py-2 px-4 border-b">Aksi</th>
                     </tr>
                 </thead>
@@ -68,6 +87,7 @@
                         $sql = "SELECT kendaraan.model AS nama_mobil, 
                             pemesanan.waktu_awal AS waktu_peminjaman, 
                             pemesanan.waktu_akhir AS waktu_pengembalian,
+                            pemesanan.harga AS harga,
                             pemesanan.ID_pemesanan,
                             pemesanan.ID_kendaraan AS car_id
                             FROM pemesanan
@@ -91,27 +111,25 @@
                                 echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['nama_mobil']) . "</td>";
                                 echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['waktu_peminjaman']) . "</td>";
                                 echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['waktu_pengembalian']) . "</td>";
+                                echo "<td class='py-2 px-4 border-b'>" . htmlspecialchars($row['harga']) . "</td>";
                                 echo "<td class='py-2 px-4 border-b flex space-x-2'>";
                                 echo "<form action='../php/process_form_delete.php' method='post'>";
                                 echo "<input type='hidden' name='ID_pemesanan' value='" . htmlspecialchars($row['ID_pemesanan']) . "'>";
                                 echo "<button type='submit' class='bg-red-500 text-white px-4 py-2 rounded-lg' onclick='return confirm(\"Are you sure you want to delete this entry?\")'>Delete</button>";
                                 echo "</form>";
-                                echo "<form action='../php/process_form_update.php' method='post'>";
-                                echo "<input type='hidden' name='ID_pemesanan' value='" . htmlspecialchars($row['ID_pemesanan']) . "'>";
-                                echo "<button type='submit' class='bg-green-500 text-white px-4 py-2 rounded-lg' onclick='return confirm(\"Are you sure you want to extend this booking?\")'>Perpanjang</button>";
-                                echo "</form>";
+                                echo "<button class='bg-green-500 text-white px-4 py-2 rounded-lg' onclick='openModal(" . $row['ID_pemesanan'] . ")'>Update</button>";
                                 echo "</td>";
                                 echo "</tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='4' class='py-2 px-4 border-b text-center'>No records found</td></tr>";
+                            echo "<tr><td colspan='5' class='py-2 px-4 border-b text-center'>No records found</td></tr>";
                         }
 
                         // Close the connection
                         $stmt->close();
                         $conn->close();
                     } else {
-                        echo "<tr><td colspan='4' class='py-2 px-4 border-b text-center'>Please log in to view your activity log.</td></tr>";
+                        echo "<tr><td colspan='5' class='py-2 px-4 border-b text-center'>Please log in to view your activity log.</td></tr>";
                     }
                     ?>
 
@@ -119,6 +137,20 @@
             </table>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <form action="../php/process_form_update.php" method="post">
+                <input type="hidden" id="modal_ID_pemesanan" name="ID_pemesanan">
+                <label for="new_waktu_akhir">New End Date:</label>
+                <input type="datetime-local" id="new_waktu_akhir" name="new_waktu_akhir" required><br>
+                <input type="submit" value="Update Booking">
+            </form>
+        </div>
+    </div>
+
     <footer class="bg-blue-900 text-white py-8">
         <div class="container mx-auto px-4">
             <div class="flex justify-between">
@@ -158,6 +190,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function openModal(ID_pemesanan) {
+            document.getElementById("modal_ID_pemesanan").value = ID_pemesanan;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("myModal")) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,6 +1,19 @@
 <?php
 session_start();
-include '../php/database.php'; // Ensure this file contains the code to initialize $conn
+
+// Database configuration
+$servername = "localhost";
+$username = "root";
+$password = "mysql";
+$database = "ngamobil";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 // Check if the user_id is set in the session
 if (!isset($_SESSION['user_id'])) {
@@ -15,16 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_waktu_akhir = $_POST['new_waktu_akhir'];
     $user_id = $_SESSION['user_id'];
 
-    // Connect to the database
-    $conn = new mysqli('localhost', 'root', 'mysql', 'ngamobil');
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Fetch the current waktu_akhir
-    $sql = "SELECT waktu_akhir FROM pemesanan WHERE ID_pemesanan = ? AND ID_penyewa = ?";
+    // Fetch the current waktu_akhir and ID_kendaraan
+    $sql = "SELECT waktu_akhir, ID_kendaraan FROM pemesanan WHERE ID_pemesanan = ? AND ID_penyewa = ?";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
@@ -33,25 +38,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->bind_param("ii", $ID_pemesanan, $user_id);
     $stmt->execute();
-    $stmt->bind_result($waktu_akhir);
+    $stmt->bind_result($waktu_akhir, $ID_kendaraan);
     $stmt->fetch();
     $stmt->close();
 
-    // Validate the new_waktu_akhir date
-    if (strtotime($new_waktu_akhir) <= strtotime($waktu_akhir)) {
-        echo "Error: New end date must be later than the current end date.";
-        exit();
+    // Fetch the daily rate for the vehicle
+    $rate_sql = "SELECT harga FROM kendaraan WHERE ID_kendaraan = ?";
+    $rate_stmt = $conn->prepare($rate_sql);
+
+    if (!$rate_stmt) {
+        die("Error preparing statement: " . $conn->error);
     }
 
-    // Update the waktu_akhir in the database
-    $update_sql = "UPDATE pemesanan SET waktu_akhir = ? WHERE ID_pemesanan = ? AND ID_penyewa = ?";
+    $rate_stmt->bind_param("i", $ID_kendaraan);
+    $rate_stmt->execute();
+    $rate_stmt->bind_result($daily_rate);
+    $rate_stmt->fetch();
+    $rate_stmt->close();
+
+    // Calculate the new rental period
+    $current_end_date = new DateTime($waktu_akhir);
+    $new_end_date = new DateTime($new_waktu_akhir);
+    $interval = $current_end_date->diff($new_end_date);
+    $additional_days = $interval->days;
+
+    // Calculate the new total price
+    // If the new end date is earlier, reduce the price accordingly
+    $new_harga = $additional_days * $daily_rate;
+
+    // Update the waktu_akhir and harga in the database
+    $update_sql = "UPDATE pemesanan SET waktu_akhir = ?, harga = harga + ? WHERE ID_pemesanan = ? AND ID_penyewa = ?";
     $update_stmt = $conn->prepare($update_sql);
 
     if (!$update_stmt) {
         die("Error preparing statement: " . $conn->error);
     }
 
-    $update_stmt->bind_param("sii", $new_waktu_akhir, $ID_pemesanan, $user_id);
+    // Adjust the price based on whether the new end date is earlier or later
+    if ($new_end_date < $current_end_date) {
+        // Reduce the price if the new end date is earlier
+        $new_harga = -$new_harga;
+    }
+
+    $update_stmt->bind_param("siii", $new_waktu_akhir, $new_harga, $ID_pemesanan, $user_id);
     $update_stmt->execute();
 
     // Check for errors in execution
@@ -69,23 +98,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extend Booking</title>
-</head>
-<body>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="ID_pemesanan">Booking ID:</label>
-        <input type="text" id="ID_pemesanan" name="ID_pemesanan" required><br>
-
-        <label for="new_waktu_akhir">New End Date:</label>
-        <input type="datetime-local" id="new_waktu_akhir" name="new_waktu_akhir" required><br>
-
-        <input type="submit" value="Extend Booking">
-    </form>
-</body>
-</html>
