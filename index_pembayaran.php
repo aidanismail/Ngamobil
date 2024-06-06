@@ -106,14 +106,59 @@ if ($stmt_jenis_mobil) {
     }
 
     $stmt_jenis_mobil->close();
+  }
+  
+// Create a new SQL query to fetch jenis_mobil
+$sql_jenis_mobil = "SELECT k.jenis_mobil
+                        FROM kendaraan k
+                        INNER JOIN pemesanan p ON k.ID_kendaraan = p.ID_kendaraan
+                        WHERE p.ID_pemesanan = ?";
+$stmt_jenis_mobil = $conn->prepare($sql_jenis_mobil);
+
+if ($stmt_jenis_mobil) {
+    $stmt_jenis_mobil->bind_param("i", $id_pemesanan);
+    $stmt_jenis_mobil->execute();
+    $result_jenis_mobil = $stmt_jenis_mobil->get_result();
+    
+    // Fetch jenis_mobil
+    if ($result_jenis_mobil->num_rows > 0) {
+        $row_jenis_mobil = $result_jenis_mobil->fetch_assoc();
+        $jenis_mobil = $row_jenis_mobil['jenis_mobil'];
+    } else {
+        // Handle if no jenis_mobil found
+        $jenis_mobil = 'Unknown';
+    }
+
+    $stmt_jenis_mobil->close();
 } else {
     // Handle error preparing statement
     echo "Error preparing statement: " . $conn->error;
 }
 ?>
+
 <?php
-// Define an array mapping id_kendaraan to the corresponding image file
-$kendaraan_images = array(
+
+// Include database configuration
+include 'database.php'; 
+
+// Initialize an empty array to store the mapping of ID_kendaraan to image paths
+$kendaraan_images = array();
+
+// Fetch data from the database to get ID_kendaraan and image paths
+$sql_images = "SELECT ID_kendaraan, image_path FROM your_table_name"; // Replace "your_table_name" with your actual table name
+$result_images = $conn->query($sql_images);
+
+// Check if the query was successful and if there are rows returned
+if ($result_images && $result_images->num_rows > 0) {
+    // Loop through each row of the result set
+    while ($row = $result_images->fetch_assoc()) {
+        // Store the ID_kendaraan and its corresponding image path in the $kendaraan_images array
+        $kendaraan_images[$row['ID_kendaraan']] = $row['image_path'];
+    }
+}
+
+// Manually insert additional image paths based on ID_kendaraan
+$kendaraan_images += array(
     1 => "images/GT-86.png",
     2 => "images/Avanza.png",
     3 => "images/Agya.png",
@@ -133,7 +178,12 @@ if (array_key_exists($id_kendaraan, $kendaraan_images)) {
     // If it doesn't exist, use a default image or handle it as needed
     $image_src = "images/bg.png"; // Change "default.png" to the path of your default image
 }
+
+// Close the database connection
+$conn->close();
+
 ?>
+
 
   <header class="flex items-center justify-between p-1 bg-white shadow-md">
     <div class="flex items-center space-x-1">
